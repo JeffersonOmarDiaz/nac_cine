@@ -53,11 +53,14 @@
     <Compile Include="Entidades\Proveedor.cs" />
     <Compile Include="Entidades\Reparto.cs" />
     <Compile Include="Entidades\Rol.cs" />
+
     <Compile Include="Entidades\Sala.cs" />
     <Compile Include="Entidades\Taquilla.cs" />
     <Compile Include="Entidades\Ticket.cs" />
     <Compile Include="Entidades\TipoSala.cs" />
     <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Taquilla.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
