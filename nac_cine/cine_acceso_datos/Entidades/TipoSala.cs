@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    public class Sala
+    public class TipoSala
     {
+        private int idTipoSala { get; set; }
         private int idSala { get; set; }
-        private int idCine { get; set; }
-        private string nombreSala { get; set; }
-        private bool estadoSala { get; set; }
+        private string nombreTipoSala { get; set; }
+        private bool estadoTipoSala { get; set; }
     }
 }
