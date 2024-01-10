@@ -76,5 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cine_logica_negocios\cine_logica_negocios.csproj">
+      <Project>{af510889-148a-480a-89e0-994e84e029ee}</Project>
+      <Name>cine_logica_negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
