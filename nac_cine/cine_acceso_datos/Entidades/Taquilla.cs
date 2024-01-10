@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    internal class Taquilla
+    public class Taquilla
     {
         private int idTaquilla {  get; set; }
         private int idCine { get; set; }
