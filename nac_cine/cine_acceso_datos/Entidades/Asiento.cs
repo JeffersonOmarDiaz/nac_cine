@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    internal class Asiento
+    public class Asiento
     {
         private int idAsiento {  get; set; }
         private int idSala { get; set; }
