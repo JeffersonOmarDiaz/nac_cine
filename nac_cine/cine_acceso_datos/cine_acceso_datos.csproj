@@ -44,6 +44,15 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Entidades\Asiento.cs" />
     <Compile Include="Entidades\Cine.cs" />
+    <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Entidades\Pelicula.cs" />
+    <Compile Include="Entidades\PeliculaGenero.cs" />
+    <Compile Include="Entidades\Programacion.cs" />
+    <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\Reparto.cs" />
+    <Compile Include="Entidades\Rol.cs" />
+    <Compile Include="Entidades\Taquilla.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
