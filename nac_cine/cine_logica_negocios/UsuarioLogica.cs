@@ -12,7 +12,7 @@ namespace cine_logica_negocios
 {
     public class UsuarioLogica
     {
-        private UsuarioDAO usuarioDAO= new UsuarioDAO();
+        private UsuarioDAO usuarioDAO = new UsuarioDAO();
 
         public Boolean insertarUsuario(Usuario nuevoUsuario)
         {
@@ -58,7 +58,7 @@ namespace cine_logica_negocios
             catch (Exception error)
             {
 
-                throw new Exception("Error al listar el usuario por CI " + error.Message);
+                throw new Exception("Error al buscar el usuario por CI " + error.Message);
             }
 
 
@@ -75,7 +75,7 @@ namespace cine_logica_negocios
             catch (Exception error)
             {
 
-                throw new Exception("Error al listar el usuario por CI " + error.Message);
+                throw new Exception("Error al Actualizar usuario" + error.Message);
             }
 
 

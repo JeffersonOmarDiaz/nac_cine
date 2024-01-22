@@ -76,7 +76,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableUsuario = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select * from USUARIO where CEDULA_USUARIO='"+ CedulaUsuario + "'";
+                ejecutarSql.CommandText = "Select * from USUARIO where CEDULA_USUARIO = '"+ CedulaUsuario + "'";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableUsuario.Load(transaccion);
                 conexionDB.CerrarConexion();
@@ -129,7 +129,7 @@ namespace cine_acceso_datos.DAO
             {
                 
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Delete from USUARIO where ID_USUARIO=" + idUsuario + " ";
+                ejecutarSql.CommandText = "Delete from USUARIO where ID_USUARIO = " + idUsuario + " ";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
   

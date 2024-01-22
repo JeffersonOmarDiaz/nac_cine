@@ -8,11 +8,11 @@ namespace cine_acceso_datos.Entidades
 {
     public class Ticket
     {
-        private int idTicket { get; set; }
-        private int idTaquilla { get; set; }
-        private int idProgramacion { get; set; }
-        private int idCompra { get; set; }
-        private string codigoTicket { get; set; }
-        private bool estadoTicket { get; set; }
+        public int idTicket { get; set; }
+        public int idTaquilla { get; set; }
+        public int idProgramacion { get; set; }
+        public int idCompra { get; set; }
+        public string codigoTicket { get; set; }
+        public bool estadoTicket { get; set; }
     }
 }

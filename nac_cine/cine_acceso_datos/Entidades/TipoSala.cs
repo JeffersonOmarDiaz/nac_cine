@@ -8,9 +8,9 @@ namespace cine_acceso_datos.Entidades
 {
     public class TipoSala
     {
-        private int idTipoSala { get; set; }
-        private int idSala { get; set; }
-        private string nombreTipoSala { get; set; }
-        private bool estadoTipoSala { get; set; }
+        public int idTipoSala { get; set; }
+        public int idSala { get; set; }
+        public string nombreTipoSala { get; set; }
+        public bool estadoTipoSala { get; set; }
     }
 }
