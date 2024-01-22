@@ -42,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="DAO\CompraDAO.cs" />
+    <Compile Include="DAO\SalaDAO.cs" />
+    <Compile Include="DAO\TicketDAO.cs" />
+    <Compile Include="DAO\TipoSalaDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Entidades\Asiento.cs" />
     <Compile Include="Entidades\Cine.cs" />
     <Compile Include="Entidades\Compra.cs" />
