@@ -8,14 +8,14 @@ namespace cine_acceso_datos.Entidades
 {
     public class Programacion
     {
-        private int idProgramacion { get; set; }
-        private int idSala { get; set; }
-        private int idPelicula { get; set; }
-        private int idUsuario { get; set; }
-        private string HoraInicio { get; set; }
-        private string HoraFin { get; set; }
-        private string estreno { get; set; }
-        private int estado { get; set; }
+       public int idProgramacion { get; set; }
+        public int idSala { get; set; }
+        public int idPelicula { get; set; }
+        public int idUsuario { get; set; }
+        public string HoraInicio { get; set; }
+        public string HoraFin { get; set; }
+        public string estreno { get; set; }
+        public int estado { get; set; }
               
     }
 }
