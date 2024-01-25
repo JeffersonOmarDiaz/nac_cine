@@ -42,7 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="PedidoLogica.cs" />
+    <Compile Include="ProgramacionLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorLogica.cs" />
+    <Compile Include="RolLogica.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">
+      <Project>{13964B0F-FFBF-46C2-8B38-45CD731FDCC8}</Project>
+      <Name>cine_acceso_datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">
