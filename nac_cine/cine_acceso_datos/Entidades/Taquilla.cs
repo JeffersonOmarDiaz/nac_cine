@@ -8,11 +8,11 @@ namespace cine_acceso_datos.Entidades
 {
     public class Taquilla
     {
-        private int idTaquilla {  get; set; }
-        private int idCine { get; set; }
-        private int idUsuario { get; set; }
-        private int idNumeroTaquilla { get; set; }
-        private int estado { get; set; }
+        public int idTaquilla {  get; set; }
+        public int idCine { get; set; }
+        public int idUsuario { get; set; }
+        public int idNumeroTaquilla { get; set; }
+        public int estado { get; set; }
 
     }
 }

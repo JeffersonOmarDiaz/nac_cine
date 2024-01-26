@@ -8,9 +8,9 @@ namespace cine_acceso_datos.Entidades
 {
     public class Genero
     {
-        private int idGenero { get; set; }
-        private int nombreGenero { get; set; }
-        private int estado { get; set; }
+        public int idGenero { get; set; }
+        public int nombreGenero { get; set; }
+        public int estado { get; set; }
 
     }
 }
