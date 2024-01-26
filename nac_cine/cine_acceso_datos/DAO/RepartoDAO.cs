@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.DAO
 {
-
-    public class ProveedorDAO
+    public class RepartoDAO
     {
-
 
         private ConexionDB conexion = new ConexionDB();
         SqlDataReader leer;
@@ -21,7 +19,7 @@ namespace cine_acceso_datos.DAO
         public DataTable Mostrar()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Proveedor";
+            comando.CommandText = "Mostrar Reparto";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -29,49 +27,46 @@ namespace cine_acceso_datos.DAO
             return tabla;
 
         }
-        public void InsertarProveedor(Proveedor nuevo)
+        public void InsertarReparto(Reparto nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Proveedor";
+            comando.CommandText = "Insertar Reparto";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProveedor ", nuevo.idProveedor);
-            comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
-            comando.Parameters.AddWithValue("@direccion", nuevo.direccion);
-            comando.Parameters.AddWithValue("@email", nuevo.email);
-            comando.Parameters.AddWithValue("@ruc", nuevo.ruc);
+            comando.Parameters.AddWithValue("@idReparto ", nuevo.idReparto);
+            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
+            comando.Parameters.AddWithValue("@idNombreActor", nuevo.idNombreActor);
+            comando.Parameters.AddWithValue("@idPersonaje", nuevo.idEstado);
             comando.Parameters.AddWithValue("@estado", nuevo.estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
 
-
         }
-
-        public void EliminarProveedor(Proveedor idProveedor)
+        public void EliminarReparto(Reparto idReparto)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Elimina Proveedores";
+            comando.CommandText = "Elimina Reparto";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@idProveedor", idProveedor));
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
-        }
-        public void ActualizarProveedor(Proveedor acnuevo)
-        {
-
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Actualiza Proveedores";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor));
-            comando.Parameters.AddWithValue("@Nombre", acnuevo.idNombre);
-            comando.Parameters.AddWithValue("@direccion", acnuevo.direccion);
-            comando.Parameters.AddWithValue("@email",acnuevo.email);
-            comando.Parameters.AddWithValue("@ruc", acnuevo.ruc);
-            comando.Parameters.AddWithValue("@estado", acnuevo.estado);
+            comando.Parameters.Add(new SqlParameter("@idReparto", idReparto));
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
 
+
+        public void ActualizarReparto(Reparto acnuevo)
+        {
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Actualiza Reparto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idReparto", acnuevo.idReparto) ;
+            comando.Parameters.AddWithValue("@IdPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@NombreActor", acnuevo.NombreActor);
+            comando.Parameters.AddWithValue("@Personaje",acnuevo.Personaje);        
+            comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
     }
 }
 

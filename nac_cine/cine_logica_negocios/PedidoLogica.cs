@@ -12,9 +12,9 @@ namespace cine_logica_negocios
     public class PedidoLogica
     {
         private PedidoDAO pedidoDAO = new PedidoDAO();
-        public Boolean InsertarPedido(Pedido nuevoPedido)
+        public Boolean InsertarPedido(Pedido nuevo)
         {
-            pedidoDAO.InsertarPedido(nuevoPedido);
+            pedidoDAO.InsertarPedido(nuevo);
             return true;
 
 
@@ -24,10 +24,18 @@ namespace cine_logica_negocios
             return pedidoDAO.Mostrar();
         }
 
+        public Boolean EliminarPedido(Pedido idPedido)
+        {
+            pedidoDAO.EliminarPedido(idPedido);
+            return true;
+        }
+                public Boolean ActualizarPedido(Pedido acnuevo)
+                {
+                    pedidoDAO.ActualizarPedido(acnuevo);
+                    return true;
+
+                }
+            }
+        }
 
 
-
-
-
-    }
-}

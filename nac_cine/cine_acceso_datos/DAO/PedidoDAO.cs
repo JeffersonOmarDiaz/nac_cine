@@ -23,7 +23,7 @@ namespace cine_acceso_datos.DAO
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            conexion.AbrirConexion();
+            conexion.CerrarConexion();
             return tabla;
 
         }
@@ -45,5 +45,28 @@ namespace cine_acceso_datos.DAO
 
         }
 
+        public void EliminarPedido(Pedido idPedido)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Elimina Pedido";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add(new SqlParameter("@idPedido", idPedido));
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+        public void ActualizarPedido (Pedido acnuevo)
+        {
+
+            comando.Parameters.AddWithValue("@idPedido ", acnuevo.idPedido);
+            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor);
+            comando.Parameters.AddWithValue("@fechaPedido", acnuevo.fechaPedido);
+            comando.Parameters.AddWithValue("@EstadoPedido", acnuevo.EstadoPedido);
+            comando.Parameters.AddWithValue("@PedidoValor", acnuevo.PedidoValor);
+            comando.Parameters.AddWithValue("@estado", acnuevo.Estado);
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+
+        }
     }
 }

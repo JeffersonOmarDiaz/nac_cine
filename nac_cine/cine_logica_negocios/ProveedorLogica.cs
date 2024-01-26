@@ -12,9 +12,9 @@ namespace cine_logica_negocios
     public class ProveedorLogica
     {
         private ProveedorDAO proveedorDAO = new ProveedorDAO();
-        public Boolean InsertarProveedor(Proveedor nuevoProveedor)
+        public Boolean InsertarProveedor(Proveedor nuevo)
         {
-            proveedorDAO.InsertarProveedor(nuevoProveedor);
+            proveedorDAO.InsertarProveedor(nuevo);
             return true;
 
 
@@ -23,8 +23,19 @@ namespace cine_logica_negocios
         {
             return proveedorDAO.Mostrar();
         }
+        public Boolean EliminarProveedor(Proveedor idProveedor)
+        {
+            proveedorDAO.EliminarProveedor(idProveedor);
+            return true;
+        }
+        public Boolean ActualizarProveedor(Proveedor acnuevo)
+        {
+            proveedorDAO.ActualizarProveedor(acnuevo);
+            return true;
 
 
+
+        }
 
     }
 }

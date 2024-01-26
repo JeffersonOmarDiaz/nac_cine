@@ -46,6 +46,7 @@
     <Compile Include="ProgramacionLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorLogica.cs" />
+    <Compile Include="RepartoLogica.cs" />
     <Compile Include="RolLogica.cs" />
   </ItemGroup>
   <ItemGroup>

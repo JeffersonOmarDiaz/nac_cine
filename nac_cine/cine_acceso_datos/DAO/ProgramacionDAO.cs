@@ -23,7 +23,7 @@ namespace cine_acceso_datos.DAO
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            conexion.AbrirConexion();
+            conexion.CerrarConexion();
             return tabla;
 
         }
@@ -45,6 +45,32 @@ namespace cine_acceso_datos.DAO
             conexion.CerrarConexion();
 
         }
+        public void EliminarProgramacion(Programacion idProgramacion)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Elimina Programacion";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Add(new SqlParameter("@idProgramacion", idProgramacion));
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+        public void ActualizarProgramacion(Programacion acnuevo)
+        {
 
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Actualiza Programacion";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idProgramacion", acnuevo.idProgramacion);
+            comando.Parameters.AddWithValue("@idSala", acnuevo.idSala);
+            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@idUsuario", acnuevo.idUsuario);
+            comando.Parameters.AddWithValue("@Horainicio", acnuevo.HoraInicio);
+            comando.Parameters.AddWithValue("@HoraFin", acnuevo.HoraFin);
+            comando.Parameters.AddWithValue("@estreno", acnuevo.estreno);
+            comando.Parameters.AddWithValue("@estado", acnuevo.estado);      
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+
+        }
     }
 }
