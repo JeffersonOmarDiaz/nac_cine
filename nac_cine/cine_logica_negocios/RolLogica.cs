@@ -12,9 +12,9 @@ namespace cine_logica_negocios
     public class RolLogica
     {
         private RolDao rolDao = new RolDao();
-        public Boolean InsertarRol(Rol nuevoRol)
+        public Boolean InsertarRol(Rol nuevo)
         {
-            rolDao.InsertarRol(nuevoRol);
+            rolDao.InsertarRol(nuevo);
             return true;
 
 
@@ -24,7 +24,19 @@ namespace cine_logica_negocios
             return rolDao.Mostrar();
         }
 
+        public Boolean EliminarRol(Rol idRol)
+        {
+            rolDao.EliminarRol(idRol);
+            return true;
+        }
+        public Boolean ActualizarRol(Reparto acnuevo)
+        {
+            RolDao.ActualizarRol (acnuevo);
+            return true;
 
-
+        }
     }
 }
+
+
+   

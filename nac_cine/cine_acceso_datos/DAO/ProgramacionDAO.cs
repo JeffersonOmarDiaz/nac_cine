@@ -54,20 +54,20 @@ namespace cine_acceso_datos.DAO
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarProgramacion(Programacion nuevo)
+        public void ActualizarProgramacion(Programacion acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Actualiza Programacion";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProgramacion", nuevo.idProgramacion);
-            comando.Parameters.AddWithValue("@idSala", nuevo.idSala);
-            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idUsuario", nuevo.idUsuario);
-            comando.Parameters.AddWithValue("@Horainicio", nuevo.HoraInicio);
-            comando.Parameters.AddWithValue("@HoraFin", nuevo.HoraFin);
-            comando.Parameters.AddWithValue("@estreno", nuevo.estreno);
-            comando.Parameters.AddWithValue("@estado", nuevo.estado);      
+            comando.Parameters.AddWithValue("@idProgramacion", acnuevo.idProgramacion);
+            comando.Parameters.AddWithValue("@idSala", acnuevo.idSala);
+            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@idUsuario", acnuevo.idUsuario);
+            comando.Parameters.AddWithValue("@Horainicio", acnuevo.HoraInicio);
+            comando.Parameters.AddWithValue("@HoraFin", acnuevo.HoraFin);
+            comando.Parameters.AddWithValue("@estreno", acnuevo.estreno);
+            comando.Parameters.AddWithValue("@estado", acnuevo.estado);      
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
 

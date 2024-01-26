@@ -53,17 +53,17 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void ActualizarReparto(Reparto nuevo)
+        public void ActualizarReparto(Reparto acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Actualiza Reparto";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idReparto", nuevo.idReparto) ;
-            comando.Parameters.AddWithValue("@IdPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@NombreActor", nuevo.NombreActor);
-            comando.Parameters.AddWithValue("@Personaje", nuevo.Personaje);        
-            comando.Parameters.AddWithValue("@Estado", nuevo.Estado);
+            comando.Parameters.AddWithValue("@idReparto", acnuevo.idReparto) ;
+            comando.Parameters.AddWithValue("@IdPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@NombreActor", acnuevo.NombreActor);
+            comando.Parameters.AddWithValue("@Personaje",acnuevo.Personaje);        
+            comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }

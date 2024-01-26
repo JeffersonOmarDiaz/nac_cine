@@ -54,16 +54,16 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void ActualizarRol(Rol nuevo)
+        public void ActualizarRol(Rol acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "Actualiza rol";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@IDRole", nuevo.idRol);
-                comando.Parameters.AddWithValue("@IdUsuario", nuevo.idUsuario);
-                comando.Parameters.AddWithValue("@Nombre", nuevo .Nombre);
-                comando.Parameters.AddWithValue("@Estado", nuevo.Estado);                    
+                comando.Parameters.AddWithValue("@IDRole", acnuevo.idRol);
+                comando.Parameters.AddWithValue("@IdUsuario", acnuevo.idUsuario);
+                comando.Parameters.AddWithValue("@Nombre",acnuevo .Nombre);
+                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);                    
                 comando.ExecuteNonQuery();
                 conexion.CerrarConexion();
             }

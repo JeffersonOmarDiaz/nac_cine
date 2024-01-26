@@ -54,16 +54,16 @@ namespace cine_acceso_datos.DAO
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarPedido (Pedido nuevo)
+        public void ActualizarPedido (Pedido acnuevo)
         {
 
-            comando.Parameters.AddWithValue("@idPedido ", nuevo.idPedido);
-            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idProveedor", nuevo.idProveedor);
-            comando.Parameters.AddWithValue("@fechaPedido", nuevo.fechaPedido);
-            comando.Parameters.AddWithValue("@EstadoPedido", nuevo.EstadoPedido);
-            comando.Parameters.AddWithValue("@PedidoValor", nuevo.PedidoValor);
-            comando.Parameters.AddWithValue("@estado", nuevo.Estado);
+            comando.Parameters.AddWithValue("@idPedido ", acnuevo.idPedido);
+            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
+            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor);
+            comando.Parameters.AddWithValue("@fechaPedido", acnuevo.fechaPedido);
+            comando.Parameters.AddWithValue("@EstadoPedido", acnuevo.EstadoPedido);
+            comando.Parameters.AddWithValue("@PedidoValor", acnuevo.PedidoValor);
+            comando.Parameters.AddWithValue("@estado", acnuevo.Estado);
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
 

@@ -56,18 +56,18 @@ namespace cine_acceso_datos.DAO
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarProveedor(Proveedor nuevo)
+        public void ActualizarProveedor(Proveedor acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Actualiza Proveedores";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProveedor", nuevo.idProveedor));
-            comando.Parameters.AddWithValue("@Nombre", nuevo.idNombre);
-            comando.Parameters.AddWithValue("@direccion", nuevo.direccion);
-            comando.Parameters.AddWithValue("@email", nuevo.email);
-            comando.Parameters.AddWithValue("@ruc", nuevo.ruc);
-            comando.Parameters.AddWithValue("@estado", nuevo.estado);
+            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor));
+            comando.Parameters.AddWithValue("@Nombre", acnuevo.idNombre);
+            comando.Parameters.AddWithValue("@direccion", acnuevo.direccion);
+            comando.Parameters.AddWithValue("@email",acnuevo.email);
+            comando.Parameters.AddWithValue("@ruc", acnuevo.ruc);
+            comando.Parameters.AddWithValue("@estado", acnuevo.estado);
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
