@@ -8,15 +8,15 @@ namespace cine_acceso_datos.Entidades
 {
     public class Usuario
     {
-        private int idUsuario { get; set; }
-        private string nombreUsuario { get; set; }
-        private string apellidoUsuario { get; set; }
-        private string cedulaUsuario { get; set; }
-        private string emailUsuario { get; set; }
-        private string telefonoUsuario { get; set; }
-        private int edadUsuario { get; set; }
-        private string usernameUsuario { get; set; }
-        private string passwordUsuario { get; set; }
-        private bool estadoUsuario { get; set; }
+        public int idUsuario { get; set; }
+        public string nombreUsuario { get; set; }
+        public string apellidoUsuario { get; set; }
+        public string cedulaUsuario { get; set; }
+        public string emailUsuario { get; set; }
+        public string telefonoUsuario { get; set; }
+        public int edadUsuario { get; set; }
+        public string usernameUsuario { get; set; }
+        public string passwordUsuario { get; set; }
+        public bool estadoUsuario { get; set; }
     }
 }
