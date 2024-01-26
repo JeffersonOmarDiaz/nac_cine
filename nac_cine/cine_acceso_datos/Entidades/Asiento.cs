@@ -8,11 +8,11 @@ namespace cine_acceso_datos.Entidades
 {
     public class Asiento
     {
-        private int idAsiento {  get; set; }
-        private int idSala { get; set; }
-        private string numeroAsiento { get; set; }
-        private string filaAsiento { get; set; }
-        private int ocupado { get; set; }
-        private int estado { get; set; }
+        public int idAsiento {  get; set; }
+        public int idSala { get; set; }
+        public string numeroAsiento { get; set; }
+        public string filaAsiento { get; set; }
+        public int ocupado { get; set; }
+        public int estado { get; set; }
     }
 }

@@ -8,11 +8,11 @@ namespace cine_acceso_datos.Entidades
 {
     public class Cine
     {
-        private int idCine { get; set; }
-        private string nombre { get; set; }
-        private string direccion { get; set; }
-        private string horario_apertura { get; set; }
-        private string horario_cierre { get; set; }
-        private int estado { get; set; }
+        public int idCine { get; set; }
+        public string nombre { get; set; }
+        public string direccion { get; set; }
+        public string horario_apertura { get; set; }
+        public string horario_cierre { get; set; }
+        public int estado { get; set; }
     }
 }

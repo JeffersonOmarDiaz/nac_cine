@@ -8,14 +8,15 @@ namespace cine_acceso_datos.Entidades
 {
     public class Pelicula
     {
-        private int idPelicula {  get; set; }
-        private string nombre { get; set; }
-        private string sinopsis { get; set; }
-        private int anio { get; set; }
-        private string trailer { get; set; }
-        private string duracion { get; set; }
-        private int stock { get; set; }
-        private int stado { get; set; }
+        public int idPelicula {  get; set; }
+        public string nombre { get; set; }
+        public string sinopsis { get; set; }
+        public int anio { get; set; }
+        public string trailer { get; set; }
+        public string duracion { get; set; }
+        public int genero { get; set; }
+        public int stock { get; set; }
+        public int stado { get; set; }
 
     }
 }

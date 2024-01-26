@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsientoLogica.cs" />
+    <Compile Include="CineLogica.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CompraLogica.cs" />
+    <Compile Include="GeneroLogica.cs" />
+    <Compile Include="GeneroPeliculaLogica.cs" />
+    <Compile Include="PeliculaLogica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaLogica.cs" />
+    <Compile Include="TaquillaLogica.cs" />
     <Compile Include="TicketLogica.cs" />
     <Compile Include="TipoSalaLogica.cs" />
     <Compile Include="UsuarioLogica.cs" />
