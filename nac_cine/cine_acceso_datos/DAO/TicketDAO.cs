@@ -22,13 +22,7 @@ namespace cine_acceso_datos.DAO
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
                 ejecutarSql.CommandText = "insert into TICKET (ID_TAQUILLA,ID_PROGRAMACION,ID_COMPRA,CODIGO,ESTADO)" +
-                                          "values("
-                                          + nuevoTicket.idTaquilla + ","
-                                          + nuevoTicket.idProgramacion + ","
-                                          + nuevoTicket.idCompra + ",'"
-                                          + nuevoTicket.codigoTicket + "',"
-                                          + nuevoTicket.estadoTicket
-                                          + ")";
+                                          "values(" + nuevoTicket.idTaquilla + "," + nuevoTicket.idProgramacion + "," + nuevoTicket.idCompra + ",'" + nuevoTicket.codigoTicket + "'," + nuevoTicket.estadoTicket + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
@@ -93,13 +87,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update TICKET set "
-                                          + nuevoTicket.idTaquilla + ","
-                                          + nuevoTicket.idProgramacion + ","
-                                          + nuevoTicket.idCompra + ",'"
-                                          + nuevoTicket.codigoTicket + "','"
-                                          + nuevoTicket.estadoTicket
-                                          + " where ID_TICKET = " + nuevoTicket.idTicket + " ";
+                ejecutarSql.CommandText = "update TICKET set " + "ID_TAQUILLA ='" + nuevoTicket.idTaquilla + "," + "ID_PROGRAMACION ='" + nuevoTicket.idProgramacion + "," + "ID_COMPRA ='" + nuevoTicket.idCompra + ",'" + "CODIGO ='" + nuevoTicket.codigoTicket + "','" + "ESTADO ='" + nuevoTicket.estadoTicket + " where ID_TICKET = " + nuevoTicket.idTicket + " "; 
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

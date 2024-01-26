@@ -22,17 +22,7 @@ namespace cine_acceso_datos.DAO
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
                 ejecutarSql.CommandText = "insert into USUARIO (NOMBRE_USUARIO,APELLIDO_USUARIO,CEDULA_USUARIO,EMAIL_USUARIO,TELEFONO_USUARIO,EDAD,USERNAME,PASSWORD,ESTADO)" +
-                                          "values('"
-                                          + nuevoUsuario.nombreUsuario + "','"
-                                          + nuevoUsuario.apellidoUsuario + "','"
-                                          + nuevoUsuario.cedulaUsuario + "','"
-                                          + nuevoUsuario.emailUsuario + "','"
-                                          + nuevoUsuario.telefonoUsuario + "',"
-                                          + nuevoUsuario.edadUsuario + ",'"
-                                          + nuevoUsuario.usernameUsuario + "','"
-                                          + nuevoUsuario.passwordUsuario + "',"
-                                          + nuevoUsuario.estadoUsuario
-                                          + ")";
+                                          "values('" + nuevoUsuario.nombreUsuario + "','" + nuevoUsuario.apellidoUsuario + "','" + nuevoUsuario.cedulaUsuario + "','" + nuevoUsuario.emailUsuario + "','" + nuevoUsuario.telefonoUsuario + "'," + nuevoUsuario.edadUsuario + ",'" + nuevoUsuario.usernameUsuario + "','" + nuevoUsuario.passwordUsuario + "'," + nuevoUsuario.estadoUsuario + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
@@ -99,17 +89,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update USUARIO set "
-                                          + "NOMBRE_USUARIO ='" + nuevoUsuario.nombreUsuario + "','"
-                                          + "APELLIDO_USUARIO ='" + nuevoUsuario.apellidoUsuario + "','"
-                                          + "CEDULA_USUARIO ='" + nuevoUsuario.cedulaUsuario + "','"
-                                          + "EMAIL_USUARIO ='" + nuevoUsuario.emailUsuario + "','"
-                                          + "TELEFONO_USUARIO ='" + nuevoUsuario.telefonoUsuario + "',"
-                                          + "EDAD ='" + nuevoUsuario.edadUsuario + ",'"
-                                          + "USERNAME ='" + nuevoUsuario.usernameUsuario + "','"
-                                          + "PASSWORD ='" + nuevoUsuario.passwordUsuario + "',"
-                                          + "ESTADO ='" + nuevoUsuario.estadoUsuario +
-                                          " where ID_USUARIO = "+nuevoUsuario.idUsuario+" "; 
+                ejecutarSql.CommandText = "update USUARIO set " + "NOMBRE_USUARIO ='" + nuevoUsuario.nombreUsuario + "','" + "APELLIDO_USUARIO ='" + nuevoUsuario.apellidoUsuario + "','" + "CEDULA_USUARIO ='" + nuevoUsuario.cedulaUsuario + "','" + "EMAIL_USUARIO ='" + nuevoUsuario.emailUsuario + "','" + "TELEFONO_USUARIO ='" + nuevoUsuario.telefonoUsuario + "'," + "EDAD ='" + nuevoUsuario.edadUsuario + ",'" + "USERNAME ='" + nuevoUsuario.usernameUsuario + "','" + "PASSWORD ='" + nuevoUsuario.passwordUsuario + "'," + "ESTADO ='" + nuevoUsuario.estadoUsuario + " where ID_USUARIO = "+nuevoUsuario.idUsuario+" "; 
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

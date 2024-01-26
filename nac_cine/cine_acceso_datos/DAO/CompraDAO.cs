@@ -22,13 +22,7 @@ namespace cine_acceso_datos.DAO
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
                 ejecutarSql.CommandText = "insert into COMPRA (ID_USUARIO,CANTIDAD,PRECIO,FECHA_COMPRA,ESTADO)" +
-                                          "values("
-                                          + nuevaCompra.idUsuario + ","
-                                          + nuevaCompra.cantidadCompra + ","
-                                          + nuevaCompra.precioCompra + ",'"
-                                          + nuevaCompra.fechaCompra + "',"
-                                          + nuevaCompra.estadoCompra
-                                          + ")";
+                                          "values(" + nuevaCompra.idUsuario + "," + nuevaCompra.cantidadCompra + "," + nuevaCompra.precioCompra + ",'" + nuevaCompra.fechaCompra + "'," + nuevaCompra.estadoCompra + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
@@ -93,13 +87,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update COMPRA set "
-                                          + nuevaCompra.idUsuario + ","
-                                          + nuevaCompra.cantidadCompra + ","
-                                          + nuevaCompra.precioCompra + ",'"
-                                          + nuevaCompra.fechaCompra + "',"
-                                          + nuevaCompra.estadoCompra
-                                          + " where ID_COMPRA = " + nuevaCompra.idCompra + " ";
+                ejecutarSql.CommandText = "update COMPRA set " + "ID_USUARIO ='" + nuevaCompra.idUsuario + "," + "CANTIDAD ='" + nuevaCompra.cantidadCompra + "," + "PRECIO ='" + nuevaCompra.precioCompra + ",'" + "FECHA_COMPRA ='" + nuevaCompra.fechaCompra + "'," + "ESTADO ='" + nuevaCompra.estadoCompra + " where ID_COMPRA = " + nuevaCompra.idCompra + " ";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

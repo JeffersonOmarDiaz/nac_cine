@@ -22,11 +22,7 @@ namespace cine_acceso_datos.DAO
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
                 ejecutarSql.CommandText = "insert into TIPO_SALA (ID_SALA,NOMBRE_SALA,ESTADO)" +
-                                          "values("
-                                          + nuevoTipoSala.idSala + ",'"
-                                          + nuevoTipoSala.nombreTipoSala + "',"
-                                          + nuevoTipoSala.estadoTipoSala
-                                          + ")";
+                                          "values(" + nuevoTipoSala.idSala + ",'" + nuevoTipoSala.nombreTipoSala + "'," + nuevoTipoSala.estadoTipoSala + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
@@ -89,12 +85,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "insert into TIPO_SALA (ID_SALA,NOMBRE_SALA,ESTADO)" +
-                                          "values("
-                                          + nuevoTipoSala.idSala + ",'"
-                                          + nuevoTipoSala.nombreTipoSala + "','"
-                                          + nuevoTipoSala.estadoTipoSala +
-                                          " where ID_TIPO_SALA = " + nuevoTipoSala.idTipoSala + " ";
+                ejecutarSql.CommandText = "update TIPO_SALA set " + "ID_SALA ='" + nuevoTipoSala.idSala + ",'" + "NOMBRE_SALA ='" + nuevoTipoSala.nombreTipoSala + "','" + "ESTADO ='" + nuevoTipoSala.estadoTipoSala + " where ID_TIPO_SALA = " + nuevoTipoSala.idTipoSala + " ";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

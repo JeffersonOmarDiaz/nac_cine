@@ -22,11 +22,7 @@ namespace cine_acceso_datos.DAO
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
                 ejecutarSql.CommandText = "insert into SALA (ID_CINE,NOMBRE_SALA,ESTADO)" +
-                                          "values("
-                                          + nuevaSala.idCine + ",'"
-                                          + nuevaSala.nombreSala + "',"
-                                          + nuevaSala.estadoSala
-                                          + ")";
+                                          "values(" + nuevaSala.idCine + ",'" + nuevaSala.nombreSala + "',"+ nuevaSala.estadoSala + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
@@ -89,11 +85,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update SALA set "
-                                          + nuevaSala.idCine + ",'"
-                                          + nuevaSala.nombreSala + "','"
-                                          + nuevaSala.estadoSala +
-                                          " where ID_SALA = " + nuevaSala.idSala + " ";
+                ejecutarSql.CommandText = "update SALA set " + "ID_CINE ='" + nuevaSala.idCine + ",'" + "NOMBRE_SALA ='" + nuevaSala.nombreSala + "','" + "ESTADO ='" + nuevaSala.estadoSala + " where ID_SALA = " + nuevaSala.idSala + " "; 
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
