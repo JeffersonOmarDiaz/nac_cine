@@ -43,8 +43,14 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="DAO\AsientoDAO.cs" />
+    <Compile Include="DAO\CineDAO.cs" />
     <Compile Include="DAO\CompraDAO.cs" />
+    <Compile Include="DAO\GeneroDAO.cs" />
+    <Compile Include="DAO\GeneroPeliculaDAO.cs" />
+    <Compile Include="DAO\PeliculaDAO.cs" />
     <Compile Include="DAO\SalaDAO.cs" />
+    <Compile Include="DAO\TaquillaDAO.cs" />
     <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DAO\TipoSalaDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />

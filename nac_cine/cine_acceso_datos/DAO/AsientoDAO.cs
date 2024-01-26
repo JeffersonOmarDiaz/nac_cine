@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.DAO
 {
-    internal class AsientoDAO
+    public class AsientoDAO
     {
         private ConexionBD conexion = new ConexionBD();
         SqlDataReader leer;
