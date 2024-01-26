@@ -56,7 +56,9 @@ namespace cine_acceso_datos.DAO
         }
         public void ActualizarPedido (Pedido acnuevo)
         {
-
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "Actualiza Pedido";
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idPedido ", acnuevo.idPedido);
             comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
             comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor);
