@@ -48,6 +48,11 @@
     <Compile Include="DAO\TicketDAO.cs" />
     <Compile Include="DAO\TipoSalaDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="DAO\PedidoDAO.cs" />
+    <Compile Include="DAO\ProgramacionDAO.cs" />
+    <Compile Include="DAO\ProveedorDAO.cs" />
+    <Compile Include="DAO\RepartoDAO.cs" />
+    <Compile Include="DAO\RolDao.cs" />
     <Compile Include="Entidades\Asiento.cs" />
     <Compile Include="Entidades\Cine.cs" />
     <Compile Include="Entidades\Compra.cs" />

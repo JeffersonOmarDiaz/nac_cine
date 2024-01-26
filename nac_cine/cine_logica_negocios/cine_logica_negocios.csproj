@@ -48,6 +48,11 @@
     <Compile Include="TicketLogica.cs" />
     <Compile Include="TipoSalaLogica.cs" />
     <Compile Include="UsuarioLogica.cs" />
+    <Compile Include="PedidoLogica.cs" />
+    <Compile Include="ProgramacionLogica.cs" />
+    <Compile Include="ProveedorLogica.cs" />
+    <Compile Include="RepartoLogica.cs" />
+    <Compile Include="RolLogica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">

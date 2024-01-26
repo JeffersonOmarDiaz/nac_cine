@@ -8,10 +8,10 @@ namespace cine_acceso_datos.Entidades
 {
     public class Rol
     {
-        private int idRole { get; set; }
-        private int idUsuario { get; set; }
-        private string Nombre { get; set; }
-        private int Estado { get; set; }
+        public int idRole { get; set; }
+        public int idUsuario { get; set; }
+        public string Nombre { get; set; }
+        public int Estado { get; set; }
 
     }
 }

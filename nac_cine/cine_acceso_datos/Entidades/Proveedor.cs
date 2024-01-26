@@ -8,12 +8,12 @@ namespace cine_acceso_datos.Entidades
 {
     public class Proveedor
     {
-        private int idProveedor { get; set; }
-        private string Nombre { get; set; }
-        private string direccion { get; set; }
-        private string email { get; set; }
-        private string ruc { get; set; }
-        private int estado { get; set; }
+        public int idProveedor { get; set; }
+        public string Nombre { get; set; }
+        public string direccion { get; set; }
+        public string email { get; set; }
+        public string ruc { get; set; }
+        public int estado { get; set; }
 
     }
 }
