@@ -1,6 +1,0 @@
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\bin\Debug\cine_acceso_datos.dll
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\bin\Debug\cine_acceso_datos.pdb
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\obj\Debug\cine_acceso_datos.csproj.AssemblyReference.cache
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\obj\Debug\cine_acceso_datos.csproj.CoreCompileInputs.cache
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\obj\Debug\cine_acceso_datos.dll
-D:\Nivelacion israel\Fundamentos 2\Visual\nac_cine\nac_cine\cine_acceso_datos\obj\Debug\cine_acceso_datos.pdb
