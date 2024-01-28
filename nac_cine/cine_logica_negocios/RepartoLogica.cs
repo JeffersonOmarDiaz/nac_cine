@@ -1,4 +1,5 @@
 ﻿using cine_acceso_datos.DAO;
+using cine_acceso_datos.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,7 @@ namespace cine_logica_negocios
         private RepartoDAO repartoDao = new RepartoDAO();
         public Boolean InsertarReparto(Reparto nuevo)
         {
-            RepartoDAO.InsertarReparto(nuevo);
+            repartoDao.InsertarReparto(nuevo);
             return true;
 
 
@@ -29,7 +30,7 @@ namespace cine_logica_negocios
         }
         public Boolean ActualizarReparto(Reparto acnuevo)
         {
-            RepartoDAO.ActualizarReparto(acnuevo);
+            repartoDao.ActualizarReparto(acnuevo);
             return true;
 
         }
