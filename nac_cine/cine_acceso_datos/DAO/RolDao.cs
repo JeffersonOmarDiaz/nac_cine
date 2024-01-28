@@ -5,13 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cine_acceso_datos.Entidades;
 
 namespace cine_acceso_datos.DAO
 {
     public class RolDao
 
     {
-        private ConexionDB conexion = new ConexionDB();
+        private ConexionBD conexion = new ConexionBD();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
@@ -60,7 +61,7 @@ namespace cine_acceso_datos.DAO
             comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "Actualiza rol";
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@IDRole", acnuevo.idRol);
+                comando.Parameters.AddWithValue("@IDRole", acnuevo.idRole);
                 comando.Parameters.AddWithValue("@IdUsuario", acnuevo.idUsuario);
                 comando.Parameters.AddWithValue("@Nombre",acnuevo .Nombre);
                 comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);                    

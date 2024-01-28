@@ -5,13 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cine_acceso_datos.Entidades;
 
 namespace cine_acceso_datos.DAO
 {
     public class PedidoDAO
     {
 
-        private ConexionDB conexion = new ConexionDB();
+        private ConexionBD conexion = new ConexionBD();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();

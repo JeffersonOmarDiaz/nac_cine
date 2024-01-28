@@ -5,13 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cine_acceso_datos.Entidades;
 
 namespace cine_acceso_datos.DAO
 {
     public class RepartoDAO
     {
 
-        private ConexionDB conexion = new ConexionDB();
+        private ConexionBD conexion = new ConexionBD();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
@@ -34,9 +35,9 @@ namespace cine_acceso_datos.DAO
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idReparto ", nuevo.idReparto);
             comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idNombreActor", nuevo.idNombreActor);
-            comando.Parameters.AddWithValue("@idPersonaje", nuevo.idEstado);
-            comando.Parameters.AddWithValue("@estado", nuevo.estado);
+            comando.Parameters.AddWithValue("@idNombreActor", nuevo.NombreActor);
+            comando.Parameters.AddWithValue("@Personaje", nuevo.Personaje);
+            comando.Parameters.AddWithValue("@estado", nuevo.Estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();

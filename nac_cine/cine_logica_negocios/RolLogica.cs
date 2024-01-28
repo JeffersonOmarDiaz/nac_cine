@@ -29,9 +29,9 @@ namespace cine_logica_negocios
             rolDao.EliminarRol(idRol);
             return true;
         }
-        public Boolean ActualizarRol(Reparto acnuevo)
+        public Boolean ActualizarRol(Rol acnuevo)
         {
-            RolDao.ActualizarRol (acnuevo);
+            rolDao.ActualizarRol (acnuevo);
             return true;
 
         }

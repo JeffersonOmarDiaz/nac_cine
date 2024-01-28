@@ -8,10 +8,10 @@ namespace cine_acceso_datos.Entidades
 {
     public class Reparto
     {
-        private int idReparto { get; set; }
-        private int idPelicula { get; set; }
-        private string NombreActor { get; set; }
-        private string Personaje { get; set; }
-        private int Estado { get; set; }
+        public int idReparto { get; set; }
+        public int idPelicula { get; set; }
+        public string NombreActor { get; set; }
+        public string Personaje { get; set; }
+        public int Estado { get; set; }
     }
 }
