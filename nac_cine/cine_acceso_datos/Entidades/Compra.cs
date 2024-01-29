@@ -13,6 +13,6 @@ namespace cine_acceso_datos.Entidades
         public int cantidadCompra { get; set; }
         public decimal precioCompra { get; set; }
         public DateTime fechaCompra { get; set; }
-        public bool estadoCompra { get; set; }
+        public int estadoCompra { get; set; }
     }
 }

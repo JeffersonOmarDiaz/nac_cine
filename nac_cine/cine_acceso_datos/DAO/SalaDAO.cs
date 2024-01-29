@@ -91,7 +91,7 @@ namespace cine_acceso_datos.DAO
                     + "NOMBRE_SALA ='" + nuevaSala.nombreSala + "', " 
                     + "ESTADO = " + nuevaSala.estadoSala 
                     + " where ID_SALA = " + nuevaSala.idSala + " ";
-                Console.WriteLine(ejecutarSql.CommandText);
+                
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 
