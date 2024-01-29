@@ -1,4 +1,4 @@
-﻿namespace cine_presentacion_windows.Sala
+﻿namespace cine_presentacion_windows.FormularioSala
 {
     partial class FrmSala
     {
@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblSalaNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.chkEstadoSala = new System.Windows.Forms.CheckBox();
-            this.lblEstadoSala = new System.Windows.Forms.Label();
+            this.cmbCine = new System.Windows.Forms.ComboBox();
             this.lblCine = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.lblEstadoSala = new System.Windows.Forms.Label();
+            this.chkEstadoSala = new System.Windows.Forms.CheckBox();
+            this.txtNombreSala = new System.Windows.Forms.TextBox();
+            this.lblSalaNombre = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvSala = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -47,17 +47,68 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbCine);
             this.groupBox1.Controls.Add(this.lblCine);
             this.groupBox1.Controls.Add(this.lblEstadoSala);
             this.groupBox1.Controls.Add(this.chkEstadoSala);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNombreSala);
             this.groupBox1.Controls.Add(this.lblSalaNombre);
             this.groupBox1.Location = new System.Drawing.Point(21, 34);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 189);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbCine
+            // 
+            this.cmbCine.FormattingEnabled = true;
+            this.cmbCine.Location = new System.Drawing.Point(97, 38);
+            this.cmbCine.Name = "cmbCine";
+            this.cmbCine.Size = new System.Drawing.Size(202, 21);
+            this.cmbCine.TabIndex = 5;
+            // 
+            // lblCine
+            // 
+            this.lblCine.AutoSize = true;
+            this.lblCine.Location = new System.Drawing.Point(40, 46);
+            this.lblCine.Name = "lblCine";
+            this.lblCine.Size = new System.Drawing.Size(28, 13);
+            this.lblCine.TabIndex = 4;
+            this.lblCine.Text = "Cine";
+            // 
+            // lblEstadoSala
+            // 
+            this.lblEstadoSala.AutoSize = true;
+            this.lblEstadoSala.Location = new System.Drawing.Point(40, 127);
+            this.lblEstadoSala.Name = "lblEstadoSala";
+            this.lblEstadoSala.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoSala.TabIndex = 3;
+            this.lblEstadoSala.Text = "Estado";
+            // 
+            // chkEstadoSala
+            // 
+            this.chkEstadoSala.AutoSize = true;
+            this.chkEstadoSala.Location = new System.Drawing.Point(97, 126);
+            this.chkEstadoSala.Name = "chkEstadoSala";
+            this.chkEstadoSala.Size = new System.Drawing.Size(15, 14);
+            this.chkEstadoSala.TabIndex = 2;
+            this.chkEstadoSala.UseVisualStyleBackColor = true;
+            // 
+            // txtNombreSala
+            // 
+            this.txtNombreSala.Location = new System.Drawing.Point(97, 79);
+            this.txtNombreSala.Name = "txtNombreSala";
+            this.txtNombreSala.Size = new System.Drawing.Size(203, 20);
+            this.txtNombreSala.TabIndex = 1;
+            // 
+            // lblSalaNombre
+            // 
+            this.lblSalaNombre.AutoSize = true;
+            this.lblSalaNombre.Location = new System.Drawing.Point(40, 83);
+            this.lblSalaNombre.Name = "lblSalaNombre";
+            this.lblSalaNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblSalaNombre.TabIndex = 0;
+            this.lblSalaNombre.Text = "Nombre";
             // 
             // groupBox2
             // 
@@ -70,75 +121,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // lblSalaNombre
-            // 
-            this.lblSalaNombre.AutoSize = true;
-            this.lblSalaNombre.Location = new System.Drawing.Point(40, 83);
-            this.lblSalaNombre.Name = "lblSalaNombre";
-            this.lblSalaNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblSalaNombre.TabIndex = 0;
-            this.lblSalaNombre.Text = "Nombre";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(97, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // chkEstadoSala
-            // 
-            this.chkEstadoSala.AutoSize = true;
-            this.chkEstadoSala.Location = new System.Drawing.Point(97, 126);
-            this.chkEstadoSala.Name = "chkEstadoSala";
-            this.chkEstadoSala.Size = new System.Drawing.Size(15, 14);
-            this.chkEstadoSala.TabIndex = 2;
-            this.chkEstadoSala.UseVisualStyleBackColor = true;
-            // 
-            // lblEstadoSala
-            // 
-            this.lblEstadoSala.AutoSize = true;
-            this.lblEstadoSala.Location = new System.Drawing.Point(40, 127);
-            this.lblEstadoSala.Name = "lblEstadoSala";
-            this.lblEstadoSala.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoSala.TabIndex = 3;
-            this.lblEstadoSala.Text = "Estado";
-            // 
-            // lblCine
-            // 
-            this.lblCine.AutoSize = true;
-            this.lblCine.Location = new System.Drawing.Point(40, 46);
-            this.lblCine.Name = "lblCine";
-            this.lblCine.Size = new System.Drawing.Size(28, 13);
-            this.lblCine.TabIndex = 4;
-            this.lblCine.Text = "Cine";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(51, 32);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(51, 79);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(89, 23);
-            this.btnEditar.TabIndex = 1;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(51, 123);
@@ -148,14 +130,37 @@
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(51, 79);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(89, 23);
+            this.btnEditar.TabIndex = 1;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(51, 32);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dgvSala
             // 
             this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSala.Location = new System.Drawing.Point(27, 243);
             this.dgvSala.Name = "dgvSala";
+            this.dgvSala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSala.Size = new System.Drawing.Size(697, 161);
             this.dgvSala.TabIndex = 2;
+            this.dgvSala.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSala_CellDoubleClick);
             // 
             // FrmSala
             // 
@@ -167,6 +172,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSala";
             this.Text = "FrmSala";
+            this.Load += new System.EventHandler(this.FrmSala_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -182,9 +188,9 @@
         private System.Windows.Forms.Label lblCine;
         private System.Windows.Forms.Label lblEstadoSala;
         private System.Windows.Forms.CheckBox chkEstadoSala;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreSala;
         private System.Windows.Forms.Label lblSalaNombre;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCine;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;

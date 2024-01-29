@@ -29,7 +29,7 @@ namespace cine_logica_negocios
 
         }
 
-        public DataTable ListarGeneros()
+        public DataTable ListarCine()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace cine_logica_negocios
 
         }
 
-        public Boolean ActualizarGenero(Cine updateCine)
+        public Boolean ActualizarCine(Cine updateCine)
         {
             try
             {

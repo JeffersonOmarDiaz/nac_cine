@@ -39,7 +39,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableSala = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "select * from cine";
+                ejecutarSql.CommandText = "select * from CINE";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableSala.Load(transaccion);
                 conexionDB.CerrarConexion();

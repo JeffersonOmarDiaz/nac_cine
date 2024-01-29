@@ -11,6 +11,6 @@ namespace cine_acceso_datos.Entidades
         public int idSala { get; set; }
         public int idCine { get; set; }
         public string nombreSala { get; set; }
-        public bool estadoSala { get; set; }
+        public int estadoSala { get; set; }
     }
 }

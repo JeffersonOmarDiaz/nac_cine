@@ -1,4 +1,4 @@
-﻿using cine_presentacion_windows.Sala;
+﻿using cine_presentacion_windows.FormularioSala;
 using System;
 using System.Collections.Generic;
 using System.Linq;
