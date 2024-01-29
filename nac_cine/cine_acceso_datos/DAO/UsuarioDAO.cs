@@ -59,6 +59,30 @@ namespace cine_acceso_datos.DAO
 
         }
 
+        public DataTable ListarUsuarioSoloDatos()
+        {
+
+            try
+            {
+                DataTable dataTableUsuario = new DataTable();
+                ejecutarSql.Connection = conexionDB.AbrirConexion();
+                ejecutarSql.CommandText = "Select * from USUARIO";
+                transaccion = ejecutarSql.ExecuteReader();
+                dataTableUsuario.Load(transaccion);
+                conexionDB.CerrarConexion();
+                return dataTableUsuario;
+
+
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede listar los usuarios " + error.Message);
+            }
+
+        }
+
         public DataTable BuscarUsuarioCI(string CedulaUsuario)
         {
 
@@ -89,7 +113,18 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update USUARIO set " + "NOMBRE_USUARIO ='" + nuevoUsuario.nombreUsuario + "','" + "APELLIDO_USUARIO ='" + nuevoUsuario.apellidoUsuario + "','" + "CEDULA_USUARIO ='" + nuevoUsuario.cedulaUsuario + "','" + "EMAIL_USUARIO ='" + nuevoUsuario.emailUsuario + "','" + "TELEFONO_USUARIO ='" + nuevoUsuario.telefonoUsuario + "'," + "EDAD ='" + nuevoUsuario.edadUsuario + ",'" + "USERNAME ='" + nuevoUsuario.usernameUsuario + "','" + "PASSWORD ='" + nuevoUsuario.passwordUsuario + "'," + "ESTADO ='" + nuevoUsuario.estadoUsuario + " where ID_USUARIO = "+nuevoUsuario.idUsuario+" "; 
+                ejecutarSql.CommandText = "update USUARIO set " 
+                    + "NOMBRE_USUARIO ='" + nuevoUsuario.nombreUsuario + "', " 
+                    + "APELLIDO_USUARIO ='" + nuevoUsuario.apellidoUsuario + "', " 
+                    + "CEDULA_USUARIO ='" + nuevoUsuario.cedulaUsuario + "', " 
+                    + "EMAIL_USUARIO ='" + nuevoUsuario.emailUsuario + "', " 
+                    + "TELEFONO_USUARIO ='" + nuevoUsuario.telefonoUsuario + "'," 
+                    + "EDAD ='" + nuevoUsuario.edadUsuario + "', " 
+                    + "USERNAME ='" + nuevoUsuario.usernameUsuario + "', " 
+                    + "PASSWORD ='" + nuevoUsuario.passwordUsuario + "'," 
+                    + "ESTADO = " + nuevoUsuario.estadoUsuario 
+                    + " where ID_USUARIO = "+nuevoUsuario.idUsuario+" ";
+                Console.WriteLine(ejecutarSql.CommandText);
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

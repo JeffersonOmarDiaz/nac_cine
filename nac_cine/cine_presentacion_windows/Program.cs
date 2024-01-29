@@ -1,5 +1,7 @@
 ﻿using cine_presentacion_windows.FormularioCompra;
 using cine_presentacion_windows.FormularioSala;
+using cine_presentacion_windows.FormularioTicket;
+using cine_presentacion_windows.FormularioUsuario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCompra());
+            Application.Run(new FrmTipoSala());
         }
     }
 }

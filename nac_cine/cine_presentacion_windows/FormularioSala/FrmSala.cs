@@ -45,18 +45,25 @@ namespace cine_presentacion_windows.FormularioSala
 
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            insertarSala();
+            LimpiarSala();
+
+        }
+
+        private void LimpiarSala()
+        {
+            cmbCine.SelectedIndex = 0;
+            txtNombreSala.Clear();
+            chkEstadoSala.Checked = false;
+
+        }
+
         private void listarSala()
         {
             dgvSala.DataSource = salaLogica.ListarSala();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            insertarSala();
-            
-
-        }
-
 
 
         private void FrmSala_Load(object sender, EventArgs e)
@@ -69,7 +76,7 @@ namespace cine_presentacion_windows.FormularioSala
             listarSala();
         }
 
-        private void dgvSala_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvSala_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
@@ -85,7 +92,7 @@ namespace cine_presentacion_windows.FormularioSala
             }
             catch (Exception error)
             {
-                
+
                 throw new Exception("Error al seleccionar la sala " + error.Message);
 
             }
@@ -115,6 +122,7 @@ namespace cine_presentacion_windows.FormularioSala
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ActualizarSala();
+            LimpiarSala();
         }
 
         private void EliminarSala()
@@ -137,6 +145,9 @@ namespace cine_presentacion_windows.FormularioSala
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarSala();
+            LimpiarSala();
         }
+
+        
     }
 }

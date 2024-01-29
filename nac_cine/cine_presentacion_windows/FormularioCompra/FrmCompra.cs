@@ -49,6 +49,17 @@ namespace cine_presentacion_windows.FormularioCompra
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             insertarCompra();
+            LimpiarCompra();
+        }
+
+        private void LimpiarCompra()
+        {
+            cmbUsuario.SelectedIndex = 0;
+            txtCantidad.Clear();
+            txtPrecio.Clear();
+            dtpFecha.Value = DateTime.Now;
+            chkEstado.Checked = false;
+
         }
 
         private void listarCompra()
@@ -122,6 +133,7 @@ namespace cine_presentacion_windows.FormularioCompra
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ActualizarCompra();
+            LimpiarCompra();
         }
 
         private void EliminarCompra()
@@ -144,6 +156,7 @@ namespace cine_presentacion_windows.FormularioCompra
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarCompra();
+            LimpiarCompra();
         }
     }
 }

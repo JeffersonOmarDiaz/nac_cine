@@ -73,5 +73,27 @@ namespace cine_acceso_datos.DAO
             conexion.CerrarConexion();
 
         }
+
+        public DataTable ListarProgramacion()
+        {
+
+            try
+            {
+                DataTable dataTableProgramacion = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "Select * from PROGRAMACION";
+                leer = comando.ExecuteReader();
+                dataTableProgramacion.Load(leer);
+                conexion.CerrarConexion();
+                return dataTableProgramacion;
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede listar las Programaciones " + error.Message);
+            }
+
+        }
     }
 }

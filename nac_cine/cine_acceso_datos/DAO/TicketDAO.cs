@@ -87,7 +87,14 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "update TICKET set " + "ID_TAQUILLA ='" + nuevoTicket.idTaquilla + "," + "ID_PROGRAMACION ='" + nuevoTicket.idProgramacion + "," + "ID_COMPRA ='" + nuevoTicket.idCompra + ",'" + "CODIGO ='" + nuevoTicket.codigoTicket + "','" + "ESTADO ='" + nuevoTicket.estadoTicket + " where ID_TICKET = " + nuevoTicket.idTicket + " "; 
+                ejecutarSql.CommandText = "update TICKET set " 
+                    + "ID_TAQUILLA = " + nuevoTicket.idTaquilla + "," 
+                    + "ID_PROGRAMACION = " + nuevoTicket.idProgramacion + "," 
+                    + "ID_COMPRA = " + nuevoTicket.idCompra + ", " 
+                    + "CODIGO ='" + nuevoTicket.codigoTicket + "', "
+                    + "ESTADO = " + nuevoTicket.estadoTicket + 
+                    " where ID_TICKET = " + nuevoTicket.idTicket + " ";
+                Console.WriteLine(ejecutarSql.CommandText);
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
 

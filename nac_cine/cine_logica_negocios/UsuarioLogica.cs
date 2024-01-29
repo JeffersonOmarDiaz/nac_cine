@@ -48,6 +48,22 @@ namespace cine_logica_negocios
 
         }
 
+        public DataTable ListarUsuarioSoloDatos()
+        {
+            try
+            {
+                return usuarioDAO.ListarUsuarioSoloDatos();
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error al listar los usuarios " + error.Message);
+            }
+
+
+        }
+
         public DataTable BuscarUsuario(string CedulaUsuario)
         {
             try

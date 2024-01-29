@@ -34,6 +34,22 @@ namespace cine_logica_negocios
             return true;
 
         }
+
+        public DataTable ListarProgramacion()
+        {
+            try
+            {
+                return programacionDAO.ListarProgramacion();
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error al listar la programacion " + error.Message);
+            }
+
+
+        }
     }
 }
 

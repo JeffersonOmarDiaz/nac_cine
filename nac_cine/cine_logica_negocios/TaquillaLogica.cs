@@ -29,7 +29,7 @@ namespace cine_logica_negocios
 
         }
 
-        public DataTable LstarTaquilla()
+        public DataTable ListarTaquilla()
         {
             try
             {
@@ -39,7 +39,7 @@ namespace cine_logica_negocios
             catch (Exception error)
             {
 
-                throw new Exception("Error al listar los generos " + error.Message);
+                throw new Exception("Error al listar la Taquilla " + error.Message);
             }
 
         }

@@ -13,6 +13,6 @@ namespace cine_acceso_datos.Entidades
         public int idProgramacion { get; set; }
         public int idCompra { get; set; }
         public string codigoTicket { get; set; }
-        public bool estadoTicket { get; set; }
+        public int estadoTicket { get; set; }
     }
 }

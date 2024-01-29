@@ -17,6 +17,6 @@ namespace cine_acceso_datos.Entidades
         public int edadUsuario { get; set; }
         public string usernameUsuario { get; set; }
         public string passwordUsuario { get; set; }
-        public bool estadoUsuario { get; set; }
+        public int estadoUsuario { get; set; }
     }
 }

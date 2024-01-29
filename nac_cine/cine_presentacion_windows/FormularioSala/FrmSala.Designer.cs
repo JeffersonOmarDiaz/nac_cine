@@ -160,7 +160,7 @@
             this.dgvSala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSala.Size = new System.Drawing.Size(697, 161);
             this.dgvSala.TabIndex = 2;
-            this.dgvSala.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSala_CellDoubleClick);
+            this.dgvSala.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSala_CellMouseClick);
             // 
             // FrmSala
             // 
