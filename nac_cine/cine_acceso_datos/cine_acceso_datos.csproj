@@ -69,7 +69,7 @@
     <Compile Include="Entidades\Programacion.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
     <Compile Include="Entidades\Reparto.cs" />
-    <Compile Include="Entidades\Rol.cs" />
+    <Compile Include="Entidades\Role.cs" />
     <Compile Include="Entidades\Sala.cs" />
     <Compile Include="Entidades\Taquilla.cs" />
     <Compile Include="Entidades\Ticket.cs" />

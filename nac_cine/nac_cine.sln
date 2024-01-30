@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cine_presentacion_windows", "cine_presentacion_windows\cine_presentacion_windows.csproj", "{FE95C5D3-D45C-4F49-94A3-3A2141859B52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13964B0F-FFBF-46C2-8B38-45CD731FDCC8} = {13964B0F-FFBF-46C2-8B38-45CD731FDCC8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cine_acceso_datos", "cine_acceso_datos\cine_acceso_datos.csproj", "{13964B0F-FFBF-46C2-8B38-45CD731FDCC8}"
 EndProject

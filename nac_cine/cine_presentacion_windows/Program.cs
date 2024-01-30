@@ -1,4 +1,5 @@
-﻿using cine_presentacion_windows.Sala;
+﻿using cine_presentacion_windows.Rol;
+using cine_presentacion_windows.Sala;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,13 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSala());
+            Application.Run(new FrmRol());
+
+
+
+
+
+
         }
     }
 }

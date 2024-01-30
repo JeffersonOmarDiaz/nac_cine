@@ -28,7 +28,7 @@ namespace cine_acceso_datos.DAO
             return tabla;
 
         }
-        public void InsertarRol(Rol nuevo)
+        public void InsertarRol(Role nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Rol";
@@ -44,7 +44,7 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void EliminarRol (Rol idRole)
+        public void EliminarRol (Role idRole)
         {         
                comando.Connection= conexion.AbrirConexion();
                comando.CommandText = "Elimina rol";
@@ -55,7 +55,7 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void ActualizarRol(Rol acnuevo)
+        public void ActualizarRol(Role acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();

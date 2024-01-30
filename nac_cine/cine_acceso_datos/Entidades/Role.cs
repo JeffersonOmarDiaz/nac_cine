@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    public class Rol
+    public class Role
     {
         public int idRole { get; set; }
         public int idUsuario { get; set; }

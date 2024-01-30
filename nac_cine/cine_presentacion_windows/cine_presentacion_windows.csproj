@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rol\FrmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rol\FrmRol.Designer.cs">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sala\FrmSala.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Rol\FrmRol.resx">
+      <DependentUpon>FrmRol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sala\FrmSala.resx">
       <DependentUpon>FrmSala.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">
+      <Project>{13964b0f-ffbf-46c2-8b38-45cd731fdcc8}</Project>
+      <Name>cine_acceso_datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\cine_logica_negocios\cine_logica_negocios.csproj">
       <Project>{af510889-148a-480a-89e0-994e84e029ee}</Project>
       <Name>cine_logica_negocios</Name>
