@@ -33,6 +33,7 @@ namespace cine_presentacion_windows.FormularioSala
             cmbSala.DisplayMember = "NOMBRE_SALA";
             cmbSala.ValueMember = "ID_SALA";
             cmbSala.BindingContext = this.BindingContext;
+            LimpiarTipoSala();
             ListarTipoSala();
         }
 
@@ -64,7 +65,7 @@ namespace cine_presentacion_windows.FormularioSala
 
         private void LimpiarTipoSala()
         {
-            cmbSala.SelectedIndex = 0;
+            cmbSala.SelectedIndex = -1;
             txtNombreTipoSala.Clear();
             chkEstadoTipoSala.Checked = false;
 

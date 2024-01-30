@@ -42,7 +42,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableUsuario = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select CONCAT (NOMBRE_USUARIO,' ',APELLIDO_USUARIO) AS usuariocompleto, ID_USUARIO,NOMBRE_USUARIO,APELLIDO_USUARIO,CEDULA_USUARIO,EMAIL_USUARIO,TELEFONO_USUARIO,EDAD,USERNAME,PASSWORD,ESTADO from USUARIO";
+                ejecutarSql.CommandText = "Select CONCAT (TRIM(NOMBRE_USUARIO),' ',TRIM(APELLIDO_USUARIO)) AS usuariocompleto, ID_USUARIO,NOMBRE_USUARIO,APELLIDO_USUARIO,CEDULA_USUARIO,EMAIL_USUARIO,TELEFONO_USUARIO,EDAD,USERNAME,PASSWORD,ESTADO from USUARIO ORDER BY usuariocompleto";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableUsuario.Load(transaccion);
                 conexionDB.CerrarConexion();
@@ -66,7 +66,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableUsuario = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select * from USUARIO";
+                ejecutarSql.CommandText = "Select * from USUARIO order by ID_USUARIO";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableUsuario.Load(transaccion);
                 conexionDB.CerrarConexion();

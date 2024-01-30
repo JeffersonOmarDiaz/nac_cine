@@ -61,6 +61,7 @@
             // 
             // cmbCine
             // 
+            this.cmbCine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCine.FormattingEnabled = true;
             this.cmbCine.Location = new System.Drawing.Point(97, 38);
             this.cmbCine.Name = "cmbCine";
@@ -156,7 +157,9 @@
             // 
             this.dgvSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSala.Location = new System.Drawing.Point(27, 243);
+            this.dgvSala.MultiSelect = false;
             this.dgvSala.Name = "dgvSala";
+            this.dgvSala.ReadOnly = true;
             this.dgvSala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSala.Size = new System.Drawing.Size(697, 161);
             this.dgvSala.TabIndex = 2;
@@ -171,7 +174,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmSala";
-            this.Text = "FrmSala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulario Sala";
             this.Load += new System.EventHandler(this.FrmSala_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -54,7 +54,7 @@ namespace cine_presentacion_windows.FormularioCompra
 
         private void LimpiarCompra()
         {
-            cmbUsuario.SelectedIndex = 0;
+            cmbUsuario.SelectedIndex = -1;
             txtCantidad.Clear();
             txtPrecio.Clear();
             dtpFecha.Value = DateTime.Now;
@@ -74,6 +74,7 @@ namespace cine_presentacion_windows.FormularioCompra
             cmbUsuario.DisplayMember = "usuariocompleto";
             cmbUsuario.ValueMember = "ID_USUARIO";
             cmbUsuario.BindingContext = this.BindingContext;
+            LimpiarCompra();
             listarCompra();
         }
 

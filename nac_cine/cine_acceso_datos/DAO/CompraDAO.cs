@@ -47,7 +47,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableCompra = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select * from COMPRA";
+                ejecutarSql.CommandText = "Select * from COMPRA order by ID_COMPRA";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableCompra.Load(transaccion);
                 conexionDB.CerrarConexion();

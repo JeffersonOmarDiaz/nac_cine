@@ -42,7 +42,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableTicket = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select * from TICKET";
+                ejecutarSql.CommandText = "Select * from TICKET ORDER BY ID_TICKET";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableTicket.Load(transaccion);
                 conexionDB.CerrarConexion();

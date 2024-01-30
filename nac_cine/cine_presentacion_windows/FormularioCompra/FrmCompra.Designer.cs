@@ -101,10 +101,11 @@
             // 
             // cmbUsuario
             // 
+            this.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuario.FormattingEnabled = true;
             this.cmbUsuario.Location = new System.Drawing.Point(113, 48);
             this.cmbUsuario.Name = "cmbUsuario";
-            this.cmbUsuario.Size = new System.Drawing.Size(382, 21);
+            this.cmbUsuario.Size = new System.Drawing.Size(293, 21);
             this.cmbUsuario.TabIndex = 5;
             // 
             // lblEstado
@@ -197,7 +198,9 @@
             // 
             this.dgvCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompra.Location = new System.Drawing.Point(33, 262);
+            this.dgvCompra.MultiSelect = false;
             this.dgvCompra.Name = "dgvCompra";
+            this.dgvCompra.ReadOnly = true;
             this.dgvCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCompra.Size = new System.Drawing.Size(746, 180);
             this.dgvCompra.TabIndex = 2;
@@ -212,7 +215,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmCompra";
-            this.Text = "FrmCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulario Compra";
             this.Load += new System.EventHandler(this.FrmCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

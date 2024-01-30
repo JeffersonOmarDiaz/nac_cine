@@ -85,6 +85,7 @@
             // 
             // cmbCompra
             // 
+            this.cmbCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCompra.FormattingEnabled = true;
             this.cmbCompra.Location = new System.Drawing.Point(131, 113);
             this.cmbCompra.Name = "cmbCompra";
@@ -93,6 +94,7 @@
             // 
             // cmbProgramacion
             // 
+            this.cmbProgramacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProgramacion.FormattingEnabled = true;
             this.cmbProgramacion.Location = new System.Drawing.Point(131, 72);
             this.cmbProgramacion.Name = "cmbProgramacion";
@@ -101,6 +103,7 @@
             // 
             // cmbTaquilla
             // 
+            this.cmbTaquilla.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTaquilla.FormattingEnabled = true;
             this.cmbTaquilla.Location = new System.Drawing.Point(131, 33);
             this.cmbTaquilla.Name = "cmbTaquilla";
@@ -197,7 +200,9 @@
             // 
             this.dgvTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTicket.Location = new System.Drawing.Point(39, 278);
+            this.dgvTicket.MultiSelect = false;
             this.dgvTicket.Name = "dgvTicket";
+            this.dgvTicket.ReadOnly = true;
             this.dgvTicket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTicket.Size = new System.Drawing.Size(730, 161);
             this.dgvTicket.TabIndex = 2;
@@ -212,6 +217,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmTicket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Ticket";
             this.Load += new System.EventHandler(this.FrmTicket_Load);
             this.groupBox1.ResumeLayout(false);

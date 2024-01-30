@@ -93,6 +93,9 @@
     <EmbeddedResource Include="FormularioCompra\FrmCompra.resx">
       <DependentUpon>FrmCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMenuPrincipal\FrmMenuPrincipalCine.resx">
+      <DependentUpon>FrmMenuPrincipalCine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioSala\FrmTipoSala.resx">
       <DependentUpon>FrmTipoSala.cs</DependentUpon>
     </EmbeddedResource>

@@ -36,7 +36,9 @@ namespace cine_presentacion_windows.FormularioSala
             if (salaLogica.insertarSala(sala))
             {
                 MessageBox.Show("Sala registrada correctamente");
-                
+                listarSala();
+
+
             }
             else
             {
@@ -54,7 +56,8 @@ namespace cine_presentacion_windows.FormularioSala
 
         private void LimpiarSala()
         {
-            cmbCine.SelectedIndex = 0;
+            
+            cmbCine.SelectedIndex = -1;
             txtNombreSala.Clear();
             chkEstadoSala.Checked = false;
 
@@ -73,7 +76,9 @@ namespace cine_presentacion_windows.FormularioSala
             cmbCine.DisplayMember = "NOMBRE_CINE";
             cmbCine.ValueMember = "ID_CINE";
             cmbCine.BindingContext = this.BindingContext;
+            LimpiarSala();
             listarSala();
+            
         }
 
         private void dgvSala_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

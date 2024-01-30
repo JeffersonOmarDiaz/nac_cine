@@ -42,7 +42,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableTipoSala = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Select * from TIPO_SALA";
+                ejecutarSql.CommandText = "Select * from TIPO_SALA order by ID_TIPO_SALA";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableTipoSala.Load(transaccion);
                 conexionDB.CerrarConexion();

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblSala = new System.Windows.Forms.Label();
-            this.lblNombreTipoSala = new System.Windows.Forms.Label();
-            this.lblEstadoTipoSala = new System.Windows.Forms.Label();
-            this.cmbSala = new System.Windows.Forms.ComboBox();
-            this.chkEstadoTipoSala = new System.Windows.Forms.CheckBox();
             this.txtNombreTipoSala = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.chkEstadoTipoSala = new System.Windows.Forms.CheckBox();
+            this.cmbSala = new System.Windows.Forms.ComboBox();
+            this.lblEstadoTipoSala = new System.Windows.Forms.Label();
+            this.lblNombreTipoSala = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvTipoSala = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,6 +59,58 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // txtNombreTipoSala
+            // 
+            this.txtNombreTipoSala.Location = new System.Drawing.Point(106, 105);
+            this.txtNombreTipoSala.Name = "txtNombreTipoSala";
+            this.txtNombreTipoSala.Size = new System.Drawing.Size(206, 20);
+            this.txtNombreTipoSala.TabIndex = 5;
+            // 
+            // chkEstadoTipoSala
+            // 
+            this.chkEstadoTipoSala.AutoSize = true;
+            this.chkEstadoTipoSala.Location = new System.Drawing.Point(106, 150);
+            this.chkEstadoTipoSala.Name = "chkEstadoTipoSala";
+            this.chkEstadoTipoSala.Size = new System.Drawing.Size(15, 14);
+            this.chkEstadoTipoSala.TabIndex = 4;
+            this.chkEstadoTipoSala.UseVisualStyleBackColor = true;
+            // 
+            // cmbSala
+            // 
+            this.cmbSala.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSala.FormattingEnabled = true;
+            this.cmbSala.Location = new System.Drawing.Point(106, 60);
+            this.cmbSala.Name = "cmbSala";
+            this.cmbSala.Size = new System.Drawing.Size(210, 21);
+            this.cmbSala.TabIndex = 3;
+            // 
+            // lblEstadoTipoSala
+            // 
+            this.lblEstadoTipoSala.AutoSize = true;
+            this.lblEstadoTipoSala.Location = new System.Drawing.Point(49, 150);
+            this.lblEstadoTipoSala.Name = "lblEstadoTipoSala";
+            this.lblEstadoTipoSala.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoTipoSala.TabIndex = 2;
+            this.lblEstadoTipoSala.Text = "Estado";
+            // 
+            // lblNombreTipoSala
+            // 
+            this.lblNombreTipoSala.AutoSize = true;
+            this.lblNombreTipoSala.Location = new System.Drawing.Point(49, 107);
+            this.lblNombreTipoSala.Name = "lblNombreTipoSala";
+            this.lblNombreTipoSala.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreTipoSala.TabIndex = 1;
+            this.lblNombreTipoSala.Text = "Nombre";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Location = new System.Drawing.Point(49, 64);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(28, 13);
+            this.lblSala.TabIndex = 0;
+            this.lblSala.Text = "Sala";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -70,66 +122,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // lblSala
+            // btnEliminar
             // 
-            this.lblSala.AutoSize = true;
-            this.lblSala.Location = new System.Drawing.Point(49, 64);
-            this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(28, 13);
-            this.lblSala.TabIndex = 0;
-            this.lblSala.Text = "Sala";
-            // 
-            // lblNombreTipoSala
-            // 
-            this.lblNombreTipoSala.AutoSize = true;
-            this.lblNombreTipoSala.Location = new System.Drawing.Point(49, 107);
-            this.lblNombreTipoSala.Name = "lblNombreTipoSala";
-            this.lblNombreTipoSala.Size = new System.Drawing.Size(44, 13);
-            this.lblNombreTipoSala.TabIndex = 1;
-            this.lblNombreTipoSala.Text = "Nombre";
-            // 
-            // lblEstadoTipoSala
-            // 
-            this.lblEstadoTipoSala.AutoSize = true;
-            this.lblEstadoTipoSala.Location = new System.Drawing.Point(49, 150);
-            this.lblEstadoTipoSala.Name = "lblEstadoTipoSala";
-            this.lblEstadoTipoSala.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoTipoSala.TabIndex = 2;
-            this.lblEstadoTipoSala.Text = "Estado";
-            // 
-            // cmbSala
-            // 
-            this.cmbSala.FormattingEnabled = true;
-            this.cmbSala.Location = new System.Drawing.Point(106, 60);
-            this.cmbSala.Name = "cmbSala";
-            this.cmbSala.Size = new System.Drawing.Size(210, 21);
-            this.cmbSala.TabIndex = 3;
-            // 
-            // chkEstadoTipoSala
-            // 
-            this.chkEstadoTipoSala.AutoSize = true;
-            this.chkEstadoTipoSala.Location = new System.Drawing.Point(106, 150);
-            this.chkEstadoTipoSala.Name = "chkEstadoTipoSala";
-            this.chkEstadoTipoSala.Size = new System.Drawing.Size(15, 14);
-            this.chkEstadoTipoSala.TabIndex = 4;
-            this.chkEstadoTipoSala.UseVisualStyleBackColor = true;
-            // 
-            // txtNombreTipoSala
-            // 
-            this.txtNombreTipoSala.Location = new System.Drawing.Point(106, 105);
-            this.txtNombreTipoSala.Name = "txtNombreTipoSala";
-            this.txtNombreTipoSala.Size = new System.Drawing.Size(206, 20);
-            this.txtNombreTipoSala.TabIndex = 5;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(60, 47);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnEliminar.Location = new System.Drawing.Point(60, 155);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -141,21 +142,23 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // btnEliminar
+            // btnGuardar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(60, 155);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(60, 47);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dgvTipoSala
             // 
             this.dgvTipoSala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipoSala.Location = new System.Drawing.Point(31, 260);
+            this.dgvTipoSala.MultiSelect = false;
             this.dgvTipoSala.Name = "dgvTipoSala";
+            this.dgvTipoSala.ReadOnly = true;
             this.dgvTipoSala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTipoSala.Size = new System.Drawing.Size(750, 175);
             this.dgvTipoSala.TabIndex = 2;
@@ -170,7 +173,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmTipoSala";
-            this.Text = "FrmTipoSala";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulario Tipo de Sala";
             this.Load += new System.EventHandler(this.FrmTipoSala_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

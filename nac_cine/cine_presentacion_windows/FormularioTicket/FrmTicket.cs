@@ -49,7 +49,7 @@ namespace cine_presentacion_windows.FormularioTicket
             cmbCompra.ValueMember = "ID_COMPRA";
             cmbCompra.BindingContext = this.BindingContext;
 
-
+            LimpiarTicket();
             ListarTicket();
 
         }
@@ -85,9 +85,9 @@ namespace cine_presentacion_windows.FormularioTicket
 
         private void LimpiarTicket()
         {
-            cmbTaquilla.SelectedIndex = 0;
-            cmbProgramacion.SelectedIndex = 0;
-            cmbCompra.SelectedIndex = 0;
+            cmbTaquilla.SelectedIndex = -1;
+            cmbProgramacion.SelectedIndex = -1;
+            cmbCompra.SelectedIndex = -1;
             txtCodigo.Clear();
             chkEstadoTicket.Checked = false;
 
