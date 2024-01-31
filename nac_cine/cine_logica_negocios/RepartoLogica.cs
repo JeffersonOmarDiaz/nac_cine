@@ -12,7 +12,7 @@ namespace cine_logica_negocios
     public class RepartoLogica
     {
         private RepartoDAO repartoDao = new RepartoDAO();
-        public Boolean InsertarReparto(Reparto nuevo)
+        public Boolean InsertarReparto(Repartos nuevo)
         {
             repartoDao.InsertarReparto(nuevo);
             return true;
@@ -23,12 +23,12 @@ namespace cine_logica_negocios
         {
             return repartoDao.Mostrar();
         }
-        public Boolean EliminarReparto (Reparto idReparto)
+        public Boolean EliminarReparto (Repartos idReparto)
         {
             repartoDao.EliminarReparto(idReparto);
             return true;
         }
-        public Boolean ActualizarReparto(Reparto acnuevo)
+        public Boolean ActualizarReparto(Repartos acnuevo)
         {
             repartoDao.ActualizarReparto(acnuevo);
             return true;

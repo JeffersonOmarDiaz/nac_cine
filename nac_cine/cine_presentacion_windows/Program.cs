@@ -1,4 +1,8 @@
-﻿using cine_presentacion_windows.Rol;
+﻿using cine_presentacion_windows.Pedido;
+using cine_presentacion_windows.Programacion;
+using cine_presentacion_windows.Proveedor;
+using cine_presentacion_windows.Reparto;
+using cine_presentacion_windows.Rol;
 using cine_presentacion_windows.Sala;
 using System;
 using System.Collections.Generic;
@@ -18,7 +22,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmRol());
+            Application.Run(new FrmReparto());
 
 
 

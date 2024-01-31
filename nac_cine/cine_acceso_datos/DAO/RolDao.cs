@@ -50,7 +50,7 @@ namespace cine_acceso_datos.DAO
                comando.CommandText = "Elimina rol";
                comando.CommandType = CommandType.StoredProcedure;
                comando.Parameters.Add(new SqlParameter("@idRole", idRole));
-               comando.ExecuteNonQuery();
+              comando.ExecuteNonQuery();
                conexion.CerrarConexion();
         }
 
@@ -64,7 +64,7 @@ namespace cine_acceso_datos.DAO
                 comando.Parameters.AddWithValue("@IDRole", acnuevo.idRole);
                 comando.Parameters.AddWithValue("@IdUsuario", acnuevo.idUsuario);
                 comando.Parameters.AddWithValue("@Nombre",acnuevo .Nombre);
-                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);                    
+                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
                 comando.ExecuteNonQuery();
                 conexion.CerrarConexion();
             }

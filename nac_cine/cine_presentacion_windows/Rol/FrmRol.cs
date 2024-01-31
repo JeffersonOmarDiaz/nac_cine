@@ -45,7 +45,34 @@ namespace cine_presentacion_windows.Rol
             
             
             }
-        private void Mostrar ()
+        private void ActualizarRol ()
+        { 
+        if (rolLogica.ActualizarRol(rol))
+            {
+                MessageBox.Show("Rol editado correctamente");
+                 
+            }
+            else
+            {
+                MessageBox.Show("ERROR, Rol se edito, Contactese con soporte tecnico");
+            }
+       
+
+            }
+
+        private void EliminarRol()
+        {
+            if (rolLogica.EliminarRol(rol))
+            {
+                MessageBox.Show("El rol fue eliminado satisfactoriamente");
+
+            }
+            else
+            {
+                MessageBox.Show("ERROR, Rol no eliminado, Contactese con soporte tecnico");
+            }
+        }
+            private void Mostrar ()
         {
             dgvRol.DataSource = rolLogica.Mostrar();
 
@@ -56,7 +83,15 @@ namespace cine_presentacion_windows.Rol
 
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ActualizarRol();
+        }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+           EliminarRol();
+        }
     }
 }
 

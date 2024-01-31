@@ -28,7 +28,7 @@ namespace cine_acceso_datos.DAO
             return tabla;
 
         }
-        public void InsertarReparto(Reparto nuevo)
+        public void InsertarReparto(Repartos nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Reparto";
@@ -43,7 +43,7 @@ namespace cine_acceso_datos.DAO
             conexion.CerrarConexion();
 
         }
-        public void EliminarReparto(Reparto idReparto)
+        public void EliminarReparto(Repartos idReparto)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Elimina Reparto";
@@ -54,7 +54,7 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void ActualizarReparto(Reparto acnuevo)
+        public void ActualizarReparto(Repartos acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();

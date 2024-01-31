@@ -10,7 +10,7 @@ namespace cine_acceso_datos
 {
     public class ConexionBD
     {
-        private SqlConnection connection = new SqlConnection("Server=DESKTOP-35J3JFM\\SQLEXPRESS;Database=cine;Integrated Security=true;");
+        private SqlConnection connection = new SqlConnection("Server=DESKTOP-3BSA8ED\\SQLEXPRESS;Database=cine;Integrated Security=true;");
 
         public SqlConnection AbrirConexion()
         {

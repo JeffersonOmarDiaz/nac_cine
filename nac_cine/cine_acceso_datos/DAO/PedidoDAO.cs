@@ -28,7 +28,7 @@ namespace cine_acceso_datos.DAO
             return tabla;
 
         }
-        public void InsertarPedido(Pedido nuevo)
+        public void InsertarPedido(Pedidos nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Pedido";
@@ -46,7 +46,7 @@ namespace cine_acceso_datos.DAO
 
         }
 
-        public void EliminarPedido(Pedido idPedido)
+        public void EliminarPedido(Pedidos idPedido)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Elimina Pedido";
@@ -55,7 +55,7 @@ namespace cine_acceso_datos.DAO
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarPedido (Pedido acnuevo)
+        public void ActualizarPedido (Pedidos acnuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Actualiza Pedido";

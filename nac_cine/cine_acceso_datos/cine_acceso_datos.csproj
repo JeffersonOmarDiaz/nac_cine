@@ -63,12 +63,12 @@
     <Compile Include="Entidades\Cine.cs" />
     <Compile Include="Entidades\Compra.cs" />
     <Compile Include="Entidades\Genero.cs" />
-    <Compile Include="Entidades\Pedido.cs" />
+    <Compile Include="Entidades\Pedidos.cs" />
     <Compile Include="Entidades\Pelicula.cs" />
     <Compile Include="Entidades\PeliculaGenero.cs" />
-    <Compile Include="Entidades\Programacion.cs" />
-    <Compile Include="Entidades\Proveedor.cs" />
-    <Compile Include="Entidades\Reparto.cs" />
+    <Compile Include="Entidades\Programaciones.cs" />
+    <Compile Include="Entidades\Proveedores.cs" />
+    <Compile Include="Entidades\Repartos.cs" />
     <Compile Include="Entidades\Role.cs" />
     <Compile Include="Entidades\Sala.cs" />
     <Compile Include="Entidades\Taquilla.cs" />

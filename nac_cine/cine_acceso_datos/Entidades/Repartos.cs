@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    public class Pedido
+    public class Repartos
     {
-        public int idPedido { get; set; }
+        public int idReparto { get; set; }
         public int idPelicula { get; set; }
-        public int idProveedor { get; set; }
-        public string fechaPedido { get; set; }
-        public int EstadoPedido { get; set; }
-        public int PedidoValor { get; set; }
-
+        public string NombreActor { get; set; }
+        public string Personaje { get; set; }
         public int Estado { get; set; }
     }
 }
-

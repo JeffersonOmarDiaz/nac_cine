@@ -23,12 +23,12 @@ namespace cine_acceso_datos.DAO
             comando.CommandText = "Mostrar Programacion";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
-            tabla.Load(leer);
+           tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
 
         }
-        public void InsertarProgramacion(Programacion nuevo)
+        public void InsertarProgramacion(Programaciones nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Programacion";
@@ -46,7 +46,7 @@ namespace cine_acceso_datos.DAO
             conexion.CerrarConexion();
 
         }
-        public void EliminarProgramacion(Programacion idProgramacion)
+        public void EliminarProgramacion(Programaciones idProgramacion)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Elimina Programacion";
@@ -55,7 +55,7 @@ namespace cine_acceso_datos.DAO
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarProgramacion(Programacion acnuevo)
+        public void ActualizarProgramacion(Programaciones acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();

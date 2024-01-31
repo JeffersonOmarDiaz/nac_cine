@@ -52,8 +52,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Programacion\FrmProgramacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programacion\FrmProgramacion.Designer.cs">
+      <DependentUpon>FrmProgramacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor\FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor\FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reparto\FrmReparto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reparto\FrmReparto.Designer.cs">
+      <DependentUpon>FrmReparto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rol\FrmRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,12 @@
     <Compile Include="Sala\FrmSala.Designer.cs">
       <DependentUpon>FrmSala.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Pedido\FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programacion\FrmProgramacion.resx">
+      <DependentUpon>FrmProgramacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +105,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Proveedor\FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reparto\FrmReparto.resx">
+      <DependentUpon>FrmReparto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rol\FrmRol.resx">
       <DependentUpon>FrmRol.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,5 +140,6 @@
       <Name>cine_logica_negocios</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
