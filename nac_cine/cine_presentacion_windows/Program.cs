@@ -1,4 +1,8 @@
-﻿using cine_presentacion_windows.Sala;
+﻿using cine_presentacion_windows.Asiento;
+using cine_presentacion_windows.Cine;
+using cine_presentacion_windows.Genero;
+using cine_presentacion_windows.Sala;
+using cine_presentacion_windows.Pelicula;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +21,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSala());
+            Application.Run(new FrmPelicula());
         }
     }
 }

@@ -15,7 +15,7 @@ namespace cine_acceso_datos.DAO
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-
+        SqlDataReader transaccion;
 
 
         public void Insertarasiento(Asiento nuevoAsiento)
@@ -39,7 +39,6 @@ namespace cine_acceso_datos.DAO
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
-            conexion.CerrarConexion();
             return tabla;
 
         }
@@ -52,8 +51,8 @@ namespace cine_acceso_datos.DAO
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_asiento", updateAsiento.idAsiento);
             comando.Parameters.AddWithValue("@id_sala", updateAsiento.idSala);
-            comando.Parameters.AddWithValue("@numero_asiento", updateAsiento.numeroAsiento);
-            comando.Parameters.AddWithValue("@fila_asiento", updateAsiento.filaAsiento);
+            comando.Parameters.AddWithValue("@numero", updateAsiento.numeroAsiento);
+            comando.Parameters.AddWithValue("@fila", updateAsiento.filaAsiento);
             comando.Parameters.AddWithValue("@ocupado", updateAsiento.ocupado);
             comando.Parameters.AddWithValue("@estado", updateAsiento.estado);
             comando.ExecuteNonQuery();
@@ -68,6 +67,31 @@ namespace cine_acceso_datos.DAO
             comando.Parameters.Add(new SqlParameter("@id_asiento", idPelicula));
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
+        }
+
+        /*Para listar las salas existentes*/
+        public DataTable ListarSala()
+        {
+
+            try
+            {
+                DataTable dataTableSala = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "Select id_Sala, nombre_sala, id_Cine from SALA";
+                transaccion = comando.ExecuteReader();
+                dataTableSala.Load(transaccion);
+                conexion.CerrarConexion();
+                return dataTableSala;
+
+
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede listar las salas " + error.Message);
+            }
+
         }
     }
 }

@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asiento\FrmAsiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asiento\FrmAsiento.Designer.cs">
+      <DependentUpon>FrmAsiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cine\FrmCine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cine\FrmCine.Designer.cs">
+      <DependentUpon>FrmCine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Genero\FrmGenero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Genero\FrmGenero.Designer.cs">
+      <DependentUpon>FrmGenero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pelicula\FrmPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pelicula\FrmPelicula.Designer.cs">
+      <DependentUpon>FrmPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +84,18 @@
     <Compile Include="Sala\FrmSala.Designer.cs">
       <DependentUpon>FrmSala.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Asiento\FrmAsiento.resx">
+      <DependentUpon>FrmAsiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cine\FrmCine.resx">
+      <DependentUpon>FrmCine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Genero\FrmGenero.resx">
+      <DependentUpon>FrmGenero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pelicula\FrmPelicula.resx">
+      <DependentUpon>FrmPelicula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,10 +122,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">
+      <Project>{13964b0f-ffbf-46c2-8b38-45cd731fdcc8}</Project>
+      <Name>cine_acceso_datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\cine_logica_negocios\cine_logica_negocios.csproj">
       <Project>{af510889-148a-480a-89e0-994e84e029ee}</Project>
       <Name>cine_logica_negocios</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

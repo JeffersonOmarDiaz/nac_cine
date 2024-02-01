@@ -38,7 +38,7 @@ namespace cine_acceso_datos.DAO
         public DataTable MostrarPeliculas()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_R_TodasPeliculas";
+            comando.CommandText = "Sp_R_Peliculas";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -59,6 +59,7 @@ namespace cine_acceso_datos.DAO
             comando.Parameters.AddWithValue("@anio_pelicula", updatePelicula.anio);
             comando.Parameters.AddWithValue("@trailer", updatePelicula.trailer);
             comando.Parameters.AddWithValue("@duracion", updatePelicula.duracion);
+            comando.Parameters.AddWithValue("@idGenero", updatePelicula.genero);
             comando.Parameters.AddWithValue("@stock", updatePelicula.stock);
             comando.Parameters.AddWithValue("@estado", updatePelicula.stado);
             comando.ExecuteNonQuery();

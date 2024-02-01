@@ -1,4 +1,5 @@
-﻿using cine_acceso_datos.DAO;
+﻿using cine_acceso_datos;
+using cine_acceso_datos.DAO;
 using cine_acceso_datos.Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace cine_logica_negocios
 {
-    internal class AsientoLogica
+    public class AsientoLogica
     {
         private AsientoDAO asientoDAO = new AsientoDAO();
 
@@ -73,6 +74,21 @@ namespace cine_logica_negocios
             {
 
                 throw new Exception("Error al eliminar el asiento " + error.Message);
+            }
+
+        }
+
+        public DataTable Listarsala()
+        {
+            try
+            {
+                return asientoDAO.ListarSala();
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error al listar las salas " + error.Message);
             }
 
         }

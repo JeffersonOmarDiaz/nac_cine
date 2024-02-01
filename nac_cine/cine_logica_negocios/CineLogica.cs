@@ -13,11 +13,12 @@ namespace cine_logica_negocios
     {
         private CineDAO cineDAO = new CineDAO();
 
-        public Boolean insertarGenero(Cine nuevoCine)
+        public Boolean InsertarcCine(Cine nuevoCine)
         {
             try
             {
                 cineDAO.InsertarCine(nuevoCine);
+           
                 return true;
 
             }
@@ -29,7 +30,7 @@ namespace cine_logica_negocios
 
         }
 
-        public DataTable ListarGeneros()
+        public DataTable ListarCine()
         {
             try
             {
@@ -44,7 +45,7 @@ namespace cine_logica_negocios
 
         }
 
-        public Boolean ActualizarGenero(Cine updateCine)
+        public Boolean ActualizarCine(Cine updateCine)
         {
             try
             {

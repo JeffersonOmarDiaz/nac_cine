@@ -20,8 +20,8 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "insert into GENERO (id_genero, nombre_genero, estado)" +
-                                          "values('" + nuevoGenero.idGenero + "','" + nuevoGenero.nombreGenero + "','" + nuevoGenero.estado + "')";
+                ejecutarSql.CommandText = "insert into GENERO (nombre_genero, estado)" +
+                                          "values('" + nuevoGenero.nombreGenero + "'," + nuevoGenero.estado + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }
@@ -38,7 +38,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableSala = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "select * from GENERO";
+                ejecutarSql.CommandText = "select id_genero, nombre_genero, estado  from GENERO";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableSala.Load(transaccion);
                 conexionDB.CerrarConexion();
@@ -81,7 +81,7 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "Delete from GENERO WHERE id_genero = '" + idGenero;
+                ejecutarSql.CommandText = "Delete from GENERO WHERE id_genero = " + idGenero;
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }

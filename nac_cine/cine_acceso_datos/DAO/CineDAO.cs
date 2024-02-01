@@ -20,9 +20,9 @@ namespace cine_acceso_datos.DAO
         try
         {
             ejecutarSql.Connection = conexionDB.AbrirConexion();
-            ejecutarSql.CommandText = "insert into USUARIO (id_cine, nombre_cine, direccion_cine, horario_apertura, horario_cierre, estado)" +
-                                      "values ('" + nuevoCine.idCine + "','" + nuevoCine.nombre + "','" + nuevoCine.direccion + "','" + 
-                                      nuevoCine.horario_apertura + "','" + nuevoCine.horario_cierre + "'," + nuevoCine.horario_cierre + "')";
+            ejecutarSql.CommandText = "insert into cine (nombre_cine, direccion_cine, horario_apertura, horario_cierre, estado)" +
+                                      "values ('" +  nuevoCine.nombre + "','" + nuevoCine.direccion + "','" + 
+                                      nuevoCine.horario_apertura + "','" + nuevoCine.horario_cierre + "'," + nuevoCine.estado + ")";
             ejecutarSql.ExecuteNonQuery();
             conexionDB.CerrarConexion();
         }
@@ -39,7 +39,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableSala = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "select * from cine";
+                ejecutarSql.CommandText = "select id_cine, nombre_cine, direccion_cine, horario_apertura, horario_cierre, estado from cine";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableSala.Load(transaccion);
                 conexionDB.CerrarConexion();
