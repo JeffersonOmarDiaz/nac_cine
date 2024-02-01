@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cine_presentacion_windows.Taquilla;
 
 namespace cine_presentacion_windows
 {
@@ -21,7 +22,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPelicula());
+            Application.Run(new FrmTaquilla());
         }
     }
 }

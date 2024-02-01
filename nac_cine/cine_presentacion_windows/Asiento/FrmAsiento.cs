@@ -37,7 +37,6 @@ namespace cine_presentacion_windows.Asiento
             DataTable dt = new DataTable();
             dt = asientoLogica.Listarsala();
 
-            cmbSala.Items.Add("Seleccione" );
 
             cmbSala.DataSource = dt;
             cmbSala.DisplayMember = "nombre_sala";

@@ -20,9 +20,9 @@ namespace cine_acceso_datos.DAO
             try
             {
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "insert into taquilla (id_taquilla, id_cine, id_usuario, numero_taquilla,  estado)" +
-                                          "values ('" + nuevaTaquilla.idTaquilla + "','" + nuevaTaquilla.idCine + "','" +
-                                          nuevaTaquilla.idUsuario + "','" + nuevaTaquilla.idNumeroTaquilla + "'," + nuevaTaquilla.estado + "')";
+                ejecutarSql.CommandText = "insert into taquilla ( id_cine, id_usuario, numero_taquilla,  estado)" +
+                                          "values (" + nuevaTaquilla.idCine + "," +
+                                          nuevaTaquilla.idUsuario + "," + nuevaTaquilla.idNumeroTaquilla + "," + nuevaTaquilla.estado + ")";
                 ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }
@@ -39,7 +39,7 @@ namespace cine_acceso_datos.DAO
             {
                 DataTable dataTableSala = new DataTable();
                 ejecutarSql.Connection = conexionDB.AbrirConexion();
-                ejecutarSql.CommandText = "select * from taquilla";
+                ejecutarSql.CommandText = "select id_taquilla, id_cine, id_usuario, numero_taquilla, estado from taquilla";
                 transaccion = ejecutarSql.ExecuteReader();
                 dataTableSala.Load(transaccion);
                 conexionDB.CerrarConexion();
@@ -50,6 +50,52 @@ namespace cine_acceso_datos.DAO
             {
 
                 throw new Exception("Error no se puede listar las taquillas " + error.Message);
+            }
+
+        }
+
+        public DataTable ListarCine()
+        {
+
+            try
+            {
+                DataTable dataTableSala = new DataTable();
+                ejecutarSql.Connection = conexionDB.AbrirConexion();
+                ejecutarSql.CommandText = "select * from cine";
+                transaccion = ejecutarSql.ExecuteReader();
+                dataTableSala.Load(transaccion);
+                conexionDB.CerrarConexion();
+                return dataTableSala;
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede listar las taquillas " + error.Message);
+            }
+
+        }
+
+        public DataTable ListarUsuario()
+        {
+
+            try
+            {
+                DataTable dataTableUsuario = new DataTable();
+                ejecutarSql.Connection = conexionDB.AbrirConexion();
+                ejecutarSql.CommandText = "Select concat(NOMBRE_USUARIO, apellido_usuario) as nombre, id_usuario from USUARIO";
+                transaccion = ejecutarSql.ExecuteReader();
+                dataTableUsuario.Load(transaccion);
+                conexionDB.CerrarConexion();
+                return dataTableUsuario;
+
+
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede listar los usuarios " + error.Message);
             }
 
         }

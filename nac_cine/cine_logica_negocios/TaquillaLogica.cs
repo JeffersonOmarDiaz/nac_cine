@@ -76,6 +76,38 @@ namespace cine_logica_negocios
             }
 
         }
+
+
+        /*para mostrar el cine*/
+        public DataTable ListarCine()
+        {
+            try
+            {
+                return taquillaDAO.ListarCine();
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error al listar los cines " + error.Message);
+            }
+
+        }
+
+        public DataTable ListarUsuario()
+        {
+            try
+            {
+                return taquillaDAO.ListarUsuario();
+
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error al listar los usuarios " + error.Message);
+            }
+
+        }
     }
 
-}
+    }
