@@ -16,5 +16,10 @@ namespace cine_presentacion_windows.Sala
         {
             InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

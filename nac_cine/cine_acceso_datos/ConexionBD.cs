@@ -10,7 +10,9 @@ namespace cine_acceso_datos
 {
     public class ConexionBD
     {
+
         private SqlConnection connection = new SqlConnection("Server=odiaz\\SQLEXPRESS;Database=ProyectoExtremCinema04122023;Integrated Security=true;");
+
 
         public SqlConnection AbrirConexion()
         {

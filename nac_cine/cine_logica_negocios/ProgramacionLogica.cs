@@ -12,7 +12,7 @@ namespace cine_logica_negocios
     public class ProgramacionLogica
     {
         private ProgramacionDAO programacionDAO = new ProgramacionDAO();
-        public Boolean InsertarProgramacion(Programacion nuevo)
+        public Boolean InsertarProgramacion(Programaciones nuevo)
         {
             programacionDAO.InsertarProgramacion(nuevo);
             return true;
@@ -23,12 +23,12 @@ namespace cine_logica_negocios
         {
             return programacionDAO.Mostrar();
         }
-        public Boolean EliminarProgramacion(Programacion idPedido)
+        public Boolean EliminarProgramacion(Programaciones idPedido)
         {
             programacionDAO.EliminarProgramacion(idPedido);
             return true;
         }
-        public Boolean ActualizarProgramacion(Programacion acnuevo)
+        public Boolean ActualizarProgramacion(Programaciones acnuevo)
         {
             programacionDAO.ActualizarProgramacion(acnuevo);
             return true;

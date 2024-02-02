@@ -28,7 +28,7 @@ namespace cine_acceso_datos.DAO
             return tabla;
 
         }
-        public void InsertarRol(Rol nuevo)
+        public void InsertarRol(Role nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Rol";
@@ -44,18 +44,18 @@ namespace cine_acceso_datos.DAO
         }
 
 
-        public void EliminarRol (Rol idRole)
+        public void EliminarRol (Role idRole)
         {         
                comando.Connection= conexion.AbrirConexion();
                comando.CommandText = "Elimina rol";
                comando.CommandType = CommandType.StoredProcedure;
                comando.Parameters.Add(new SqlParameter("@idRole", idRole));
-               comando.ExecuteNonQuery();
+              comando.ExecuteNonQuery();
                conexion.CerrarConexion();
         }
 
 
-        public void ActualizarRol(Rol acnuevo)
+        public void ActualizarRol(Role acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
@@ -64,7 +64,7 @@ namespace cine_acceso_datos.DAO
                 comando.Parameters.AddWithValue("@IDRole", acnuevo.idRole);
                 comando.Parameters.AddWithValue("@IdUsuario", acnuevo.idUsuario);
                 comando.Parameters.AddWithValue("@Nombre",acnuevo .Nombre);
-                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);                    
+                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
                 comando.ExecuteNonQuery();
                 conexion.CerrarConexion();
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
-    public class Proveedor
+    public class Proveedores
     {
         public int idProveedor { get; set; }
         public string Nombre { get; set; }

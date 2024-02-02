@@ -24,13 +24,13 @@ namespace cine_acceso_datos.DAO
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Mostrar Proveedor";
             comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
+            //leer = comando.ExecuteReader();
+            //tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
 
         }
-        public void InsertarProveedor(Proveedor nuevo)
+        public void InsertarProveedor(Proveedores nuevo)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Insertar Proveedor";
@@ -41,23 +41,23 @@ namespace cine_acceso_datos.DAO
             comando.Parameters.AddWithValue("@email", nuevo.email);
             comando.Parameters.AddWithValue("@ruc", nuevo.ruc);
             comando.Parameters.AddWithValue("@estado", nuevo.estado);
-            comando.ExecuteNonQuery();
+           // comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
 
 
         }
 
-        public void EliminarProveedor(Proveedor idProveedor)
+        public void EliminarProveedor(Proveedores idProveedor)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "Elimina Proveedores";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add(new SqlParameter("@idProveedor", idProveedor));
-            comando.ExecuteNonQuery();
+            //comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
-        public void ActualizarProveedor(Proveedor acnuevo)
+        public void ActualizarProveedor(Proveedores acnuevo)
         {
 
             comando.Connection = conexion.AbrirConexion();
@@ -69,7 +69,7 @@ namespace cine_acceso_datos.DAO
             comando.Parameters.AddWithValue("@email",acnuevo.email);
             comando.Parameters.AddWithValue("@ruc", acnuevo.ruc);
             comando.Parameters.AddWithValue("@estado", acnuevo.estado);
-            comando.ExecuteNonQuery();
+            //comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
 

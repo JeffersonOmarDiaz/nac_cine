@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblSalaNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.chkEstadoSala = new System.Windows.Forms.CheckBox();
-            this.lblEstadoSala = new System.Windows.Forms.Label();
-            this.lblCine = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.lblCine = new System.Windows.Forms.Label();
+            this.lblEstadoSala = new System.Windows.Forms.Label();
+            this.chkEstadoSala = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSalaNombre = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvSala = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,6 +59,57 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(97, 38);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(202, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // lblCine
+            // 
+            this.lblCine.AutoSize = true;
+            this.lblCine.Location = new System.Drawing.Point(40, 46);
+            this.lblCine.Name = "lblCine";
+            this.lblCine.Size = new System.Drawing.Size(28, 13);
+            this.lblCine.TabIndex = 4;
+            this.lblCine.Text = "Cine";
+            // 
+            // lblEstadoSala
+            // 
+            this.lblEstadoSala.AutoSize = true;
+            this.lblEstadoSala.Location = new System.Drawing.Point(40, 127);
+            this.lblEstadoSala.Name = "lblEstadoSala";
+            this.lblEstadoSala.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoSala.TabIndex = 3;
+            this.lblEstadoSala.Text = "Estado";
+            // 
+            // chkEstadoSala
+            // 
+            this.chkEstadoSala.AutoSize = true;
+            this.chkEstadoSala.Location = new System.Drawing.Point(97, 126);
+            this.chkEstadoSala.Name = "chkEstadoSala";
+            this.chkEstadoSala.Size = new System.Drawing.Size(15, 14);
+            this.chkEstadoSala.TabIndex = 2;
+            this.chkEstadoSala.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(97, 79);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lblSalaNombre
+            // 
+            this.lblSalaNombre.AutoSize = true;
+            this.lblSalaNombre.Location = new System.Drawing.Point(40, 83);
+            this.lblSalaNombre.Name = "lblSalaNombre";
+            this.lblSalaNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblSalaNombre.TabIndex = 0;
+            this.lblSalaNombre.Text = "Nombre";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -70,65 +121,15 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // lblSalaNombre
+            // btnEliminar
             // 
-            this.lblSalaNombre.AutoSize = true;
-            this.lblSalaNombre.Location = new System.Drawing.Point(40, 83);
-            this.lblSalaNombre.Name = "lblSalaNombre";
-            this.lblSalaNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblSalaNombre.TabIndex = 0;
-            this.lblSalaNombre.Text = "Nombre";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(97, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // chkEstadoSala
-            // 
-            this.chkEstadoSala.AutoSize = true;
-            this.chkEstadoSala.Location = new System.Drawing.Point(97, 126);
-            this.chkEstadoSala.Name = "chkEstadoSala";
-            this.chkEstadoSala.Size = new System.Drawing.Size(15, 14);
-            this.chkEstadoSala.TabIndex = 2;
-            this.chkEstadoSala.UseVisualStyleBackColor = true;
-            // 
-            // lblEstadoSala
-            // 
-            this.lblEstadoSala.AutoSize = true;
-            this.lblEstadoSala.Location = new System.Drawing.Point(40, 127);
-            this.lblEstadoSala.Name = "lblEstadoSala";
-            this.lblEstadoSala.Size = new System.Drawing.Size(40, 13);
-            this.lblEstadoSala.TabIndex = 3;
-            this.lblEstadoSala.Text = "Estado";
-            // 
-            // lblCine
-            // 
-            this.lblCine.AutoSize = true;
-            this.lblCine.Location = new System.Drawing.Point(40, 46);
-            this.lblCine.Name = "lblCine";
-            this.lblCine.Size = new System.Drawing.Size(28, 13);
-            this.lblCine.TabIndex = 4;
-            this.lblCine.Text = "Cine";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(51, 32);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
-            this.btnGuardar.TabIndex = 0;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Location = new System.Drawing.Point(51, 123);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnEliminar.Size = new System.Drawing.Size(89, 23);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
@@ -139,15 +140,15 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // btnGuardar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(51, 123);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEliminar.Size = new System.Drawing.Size(89, 23);
-            this.btnEliminar.TabIndex = 2;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Location = new System.Drawing.Point(51, 32);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(89, 23);
+            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dgvSala
             // 
