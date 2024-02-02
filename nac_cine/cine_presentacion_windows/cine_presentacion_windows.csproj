@@ -46,9 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Asiento\FrmAsiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Asiento\FrmAsiento.cs" />
     <Compile Include="Asiento\FrmAsiento.Designer.cs">
       <DependentUpon>FrmAsiento.cs</DependentUpon>
     </Compile>
@@ -64,9 +62,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Genero\FrmGenero.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Genero\FrmGenero.cs" />
     <Compile Include="Genero\FrmGenero.Designer.cs">
       <DependentUpon>FrmGenero.cs</DependentUpon>
     </Compile>
@@ -84,9 +80,7 @@
     <Compile Include="Sala\FrmSala.Designer.cs">
       <DependentUpon>FrmSala.cs</DependentUpon>
     </Compile>
-    <Compile Include="Taquilla\FrmTaquilla.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Taquilla\FrmTaquilla.cs" />
     <Compile Include="Taquilla\FrmTaquilla.Designer.cs">
       <DependentUpon>FrmTaquilla.cs</DependentUpon>
     </Compile>
