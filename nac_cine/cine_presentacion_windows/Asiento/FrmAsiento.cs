@@ -57,6 +57,7 @@ namespace cine_presentacion_windows.Asiento
             asiento.ocupado = chkOcupado.Checked ? 1 : 0;
             asientoLogica.insertarAsiento(asiento);
             listarAsientos();
+            limpiarCampos();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -87,7 +88,7 @@ namespace cine_presentacion_windows.Asiento
             asiento.idAsiento = idAsientoSelec;
             asientoLogica.ActualizarAsientos(asiento);
             limpiarCampos();
-
+            listarAsientos();
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -128,7 +129,7 @@ namespace cine_presentacion_windows.Asiento
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            eliminarAsiento(idAsientoSelec); 
+            eliminarAsiento(idAsientoSelec);
         }
     }
 }

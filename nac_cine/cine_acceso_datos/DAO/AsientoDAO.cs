@@ -21,7 +21,7 @@ namespace cine_acceso_datos.DAO
         public void Insertarasiento(Asiento nuevoAsiento)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_C_Asiento";
+            comando.CommandText = "Sp_C_AsientoNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_sala", nuevoAsiento.idSala);
             comando.Parameters.AddWithValue("@numero", nuevoAsiento.numeroAsiento);
@@ -35,7 +35,7 @@ namespace cine_acceso_datos.DAO
         public DataTable MostrarAsientos()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_R_asientos";
+            comando.CommandText = "Sp_R_asientosNew";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -47,7 +47,7 @@ namespace cine_acceso_datos.DAO
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_U_Asiento";
+            comando.CommandText = "Sp_U_AsientoNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_asiento", updateAsiento.idAsiento);
             comando.Parameters.AddWithValue("@id_sala", updateAsiento.idSala);
@@ -62,7 +62,7 @@ namespace cine_acceso_datos.DAO
         public void EliminarAsiento(int idPelicula)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_D_Asiento";
+            comando.CommandText = "Sp_D_AsientoNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add(new SqlParameter("@id_asiento", idPelicula));
             comando.ExecuteNonQuery();

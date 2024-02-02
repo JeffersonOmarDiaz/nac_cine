@@ -21,7 +21,7 @@ namespace cine_acceso_datos.DAO
         public void InsertarPelicula(Pelicula nuevaPelicula)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_C_Pelicula";
+            comando.CommandText = "Sp_C_PeliculaNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre_pelicula", nuevaPelicula.nombre);
             comando.Parameters.AddWithValue("@sinopsis", nuevaPelicula.sinopsis);
@@ -38,7 +38,7 @@ namespace cine_acceso_datos.DAO
         public DataTable MostrarPeliculas()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_R_Peliculas";
+            comando.CommandText = "Sp_R_PeliculasNew";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
@@ -51,7 +51,7 @@ namespace cine_acceso_datos.DAO
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SP_U_Pelicula";
+            comando.CommandText = "SP_U_PeliculaNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@id_pelicula", updatePelicula.idPelicula);
             comando.Parameters.AddWithValue("@nombre_pelicula", updatePelicula.nombre);
@@ -69,7 +69,7 @@ namespace cine_acceso_datos.DAO
         public void EliminarPelicula(int idPelicula)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Sp_D_Pelicula";
+            comando.CommandText = "Sp_D_PeliculaNew";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Add(new SqlParameter("@id_pelicula", idPelicula));
             comando.ExecuteNonQuery();

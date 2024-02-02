@@ -35,13 +35,13 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbCine = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.txtNumTaquilla = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNumTaquilla = new System.Windows.Forms.TextBox();
-            this.chkEstado = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCine = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaquilla)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -90,6 +90,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -100,6 +101,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -126,22 +128,31 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // cmbCine
+            // chkEstado
             // 
-            this.cmbCine.FormattingEnabled = true;
-            this.cmbCine.Location = new System.Drawing.Point(119, 31);
-            this.cmbCine.Name = "cmbCine";
-            this.cmbCine.Size = new System.Drawing.Size(121, 21);
-            this.cmbCine.TabIndex = 0;
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(334, 90);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(59, 17);
+            this.chkEstado.TabIndex = 6;
+            this.chkEstado.Text = "Estado";
+            this.chkEstado.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // txtNumTaquilla
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cine";
+            this.txtNumTaquilla.Location = new System.Drawing.Point(169, 87);
+            this.txtNumTaquilla.Name = "txtNumTaquilla";
+            this.txtNumTaquilla.Size = new System.Drawing.Size(100, 20);
+            this.txtNumTaquilla.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(65, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Número de traquilla";
             // 
             // label2
             // 
@@ -160,31 +171,22 @@
             this.cmbUsuario.Size = new System.Drawing.Size(121, 21);
             this.cmbUsuario.TabIndex = 2;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Número de traquilla";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(85, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cine";
             // 
-            // txtNumTaquilla
+            // cmbCine
             // 
-            this.txtNumTaquilla.Location = new System.Drawing.Point(169, 87);
-            this.txtNumTaquilla.Name = "txtNumTaquilla";
-            this.txtNumTaquilla.Size = new System.Drawing.Size(100, 20);
-            this.txtNumTaquilla.TabIndex = 5;
-            // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(334, 90);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(59, 17);
-            this.chkEstado.TabIndex = 6;
-            this.chkEstado.Text = "Estado";
-            this.chkEstado.UseVisualStyleBackColor = true;
+            this.cmbCine.FormattingEnabled = true;
+            this.cmbCine.Location = new System.Drawing.Point(119, 31);
+            this.cmbCine.Name = "cmbCine";
+            this.cmbCine.Size = new System.Drawing.Size(121, 21);
+            this.cmbCine.TabIndex = 0;
             // 
             // FrmTaquilla
             // 

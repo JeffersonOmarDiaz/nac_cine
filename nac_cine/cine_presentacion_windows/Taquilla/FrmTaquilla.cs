@@ -109,5 +109,28 @@ namespace cine_presentacion_windows.Taquilla
         {
             cargarFilaSelect(sender, e);
         }
+
+        private void actualizarTaquilla(object sender, EventArgs e)
+        {
+            taquilla.idTaquilla = idTaquillaSelect;
+            taquilla.idNumeroTaquilla = Convert.ToInt32(txtNumTaquilla.Text);
+            taquilla.idCine = Convert.ToInt32(cmbCine.SelectedValue);
+            taquilla.idUsuario = Convert.ToInt32(cmbUsuario.SelectedValue);
+            taquilla.estado = chkEstado.Checked ? 1 : 0;
+            taquillaLogica.ActualizarTaquilla(taquilla);
+            listarTaquilla();
+            limpiarCampos();
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            actualizarTaquilla(sender, e);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {            
+            taquillaLogica.eliminarTaquilla(idTaquillaSelect);
+            listarTaquilla();
+            limpiarCampos();
+        }
     }
 }
