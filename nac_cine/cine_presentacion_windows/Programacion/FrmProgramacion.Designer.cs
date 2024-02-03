@@ -35,13 +35,13 @@
             this.lblEstreno = new System.Windows.Forms.Label();
             this.txtEstreno = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvprogramacion = new System.Windows.Forms.DataGridView();
             this.lblListar = new System.Windows.Forms.Label();
-            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvprogramacion)).BeginInit();
@@ -110,6 +110,16 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
+            // chkEstado
+            // 
+            this.chkEstado.AutoSize = true;
+            this.chkEstado.Location = new System.Drawing.Point(281, 61);
+            this.chkEstado.Name = "chkEstado";
+            this.chkEstado.Size = new System.Drawing.Size(59, 17);
+            this.chkEstado.TabIndex = 6;
+            this.chkEstado.Text = "Estado";
+            this.chkEstado.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -158,6 +168,7 @@
             this.dgvprogramacion.Name = "dgvprogramacion";
             this.dgvprogramacion.Size = new System.Drawing.Size(641, 115);
             this.dgvprogramacion.TabIndex = 8;
+            this.dgvprogramacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvprogramacion_CellClick);
             // 
             // lblListar
             // 
@@ -167,16 +178,6 @@
             this.lblListar.Size = new System.Drawing.Size(87, 13);
             this.lblListar.TabIndex = 9;
             this.lblListar.Text = "Lista de estrenos";
-            // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(281, 61);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(59, 17);
-            this.chkEstado.TabIndex = 6;
-            this.chkEstado.Text = "Estado";
-            this.chkEstado.UseVisualStyleBackColor = true;
             // 
             // FrmProgramacion
             // 
@@ -189,6 +190,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmProgramacion";
             this.Text = "FrmProgramacion";
+            this.Load += new System.EventHandler(this.FrmProgramacion_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

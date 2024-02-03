@@ -16,6 +16,7 @@ namespace cine_presentacion_windows.Proveedor
     {
         private Proveedores proveedor;
         private ProveedorLogica proveedorLogica;
+        private int idproveedorselect = 0;
         public FrmProveedor()
         {
             InitializeComponent();
@@ -27,8 +28,9 @@ namespace cine_presentacion_windows.Proveedor
             proveedor.Nombre = txtNombre.Text;
             proveedor.direccion=txtDireccion.Text;
             proveedor.ruc=txtRuc.Text;
-            proveedor.email=txtEmail.Text;  
-            proveedor.estado = 1;
+            proveedor.email=txtEmail.Text;
+            proveedor.estado = chkEstado.Checked ? 1 : 0;
+
             if (proveedorLogica.InsertarProveedor(proveedor))
             {
                 MessageBox.Show("Proveedor guardado correctamente");
@@ -41,10 +43,17 @@ namespace cine_presentacion_windows.Proveedor
         }
         private void ActualizarProveedor()
         {
+            proveedor.Nombre = txtNombre.Text;
+            proveedor.direccion = txtDireccion.Text;
+            proveedor.ruc = txtRuc.Text;
+            proveedor.email = txtEmail.Text;
+            proveedor.estado = chkEstado.Checked ? 1 : 0;
+            proveedor.idProveedor = idproveedorselect;
+
             if (proveedorLogica.ActualizarProveedor(proveedor))
             {
                 MessageBox.Show("Proveedor Actualizado correctamente");
-
+                Mostrar();
             }
             else
             {
@@ -60,7 +69,7 @@ namespace cine_presentacion_windows.Proveedor
             {
                 MessageBox.Show
                 ("El Proveedor fue eliminado satisfactoriamente");
-
+                Mostrar();
             }
             else
             {
@@ -90,6 +99,15 @@ namespace cine_presentacion_windows.Proveedor
             EliminarProveedor();    
         }
 
-       
+        private void dgvProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idproveedorselect = (int)dgvProveedor.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void FrmProveedor_Load(object sender, EventArgs e)
+        {
+
+            dgvProveedor.DataSource = proveedorLogica.Mostrar();
+        }
     }
 }

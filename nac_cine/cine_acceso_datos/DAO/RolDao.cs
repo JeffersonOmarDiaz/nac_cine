@@ -19,57 +19,77 @@ namespace cine_acceso_datos.DAO
 
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Rol";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            try
+            {
+                DataTable dataTableSala = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "select id_role, nombre, id_usuario,estado from rol";
+                leer = comando.ExecuteReader();
+                dataTableSala.Load(leer);
+                conexion.CerrarConexion();
+                return dataTableSala;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar el rol " + ex.Message);
+            }
 
         }
         public void InsertarRol(Role nuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Rol";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idRole", nuevo.idRole);
-            comando.Parameters.AddWithValue("@idUsuario", nuevo.idUsuario);
-            comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
-            comando.Parameters.AddWithValue("@Estado", nuevo.Estado);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "insert into rol (nombre,, id_usuario,estado)" +
+                                    "Values( '" + nuevo.Nombre + "', " + nuevo.idUsuario + "," + nuevo.Estado + ")";
 
-        }
-
-
-        public void EliminarRol (Role idRole)
-        {         
-               comando.Connection= conexion.AbrirConexion();
-               comando.CommandText = "Elimina rol";
-               comando.CommandType = CommandType.StoredProcedure;
-               comando.Parameters.Add(new SqlParameter("@idRole", idRole));
-              comando.ExecuteNonQuery();
-               conexion.CerrarConexion();
-        }
-
-
-        public void ActualizarRol(Role acnuevo)
-        {
-
-            comando.Connection = conexion.AbrirConexion();
-                comando.CommandText = "Actualiza rol";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("@IDRole", acnuevo.idRole);
-                comando.Parameters.AddWithValue("@IdUsuario", acnuevo.idUsuario);
-                comando.Parameters.AddWithValue("@Nombre",acnuevo .Nombre);
-                comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
                 comando.ExecuteNonQuery();
                 conexion.CerrarConexion();
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede insertar roles " + ex.Message);
             }
         }
+
+
+        public void EliminarRol(Role idRole)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "delete from Rol where id_rol= " + idRole;
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede eliminar " + ex.Message);
+            }
+
+        }
+        public void ActualizarRol(Role acnuevo)
+        {
+            try
+            {
+
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE Rol set " +
+                       "Nombre='" + acnuevo.Nombre + "'," +
+                      "estado=" + acnuevo.Estado + "," +
+                       "id_Usuario=" + acnuevo.idUsuario +
+                       "where id_rol=" + acnuevo.idRole;
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede actualizar rol " + error.Message);
+            }
+        }
+    }
+}
     
 
     

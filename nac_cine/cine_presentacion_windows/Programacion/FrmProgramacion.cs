@@ -17,6 +17,7 @@ namespace cine_presentacion_windows.Programacion
 
         private Programaciones programacion;
         private ProgramacionLogica programacionLogica;
+        private int idprogramacionselect = 0;
         public FrmProgramacion()
         {
             InitializeComponent();
@@ -25,10 +26,12 @@ namespace cine_presentacion_windows.Programacion
         }
         private void InsertarProgramacion()
         {
+            programacion.idSala = 2;
             programacion.estreno=txtEstreno.Text;
             programacion.HoraFin=dtpHoraFin.Value;
-            programacion.HoraInicio=dtpHoraInicio.Value;           
-            programacion.estado = 1;
+            programacion.HoraInicio=dtpHoraInicio.Value;
+            programacion.estado = chkEstado.Checked ? 1 : 0;
+
             if (programacionLogica.InsertarProgramacion(programacion))
             {
                 MessageBox.Show("Nueva Programacion guardada correctamente");
@@ -41,6 +44,13 @@ namespace cine_presentacion_windows.Programacion
         }
         private void ActualizarProgramacion()
         {
+            programacion.idSala = 2;
+            programacion.estreno = txtEstreno.Text;
+            programacion.HoraFin = dtpHoraFin.Value;
+            programacion.HoraInicio = dtpHoraInicio.Value;
+            programacion.estado = chkEstado.Checked ? 1 : 0;
+            programacion.idProgramacion = idprogramacionselect;
+
             if (programacionLogica.ActualizarProgramacion(programacion))
             {
                 MessageBox.Show("Programacion Actualizada correctamente");
@@ -60,7 +70,7 @@ namespace cine_presentacion_windows.Programacion
             {
                 MessageBox.Show
                 ("El Programacion fue eliminada satisfactoriamente");
-
+                Mostrar();
             }
             else
             {
@@ -87,6 +97,16 @@ namespace cine_presentacion_windows.Programacion
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarProgramacion(); 
+        }
+
+        private void dgvprogramacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idprogramacionselect = (int)dgvprogramacion.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void FrmProgramacion_Load(object sender, EventArgs e)
+        {
+            dgvprogramacion.DataSource = programacionLogica.Mostrar();
         }
     }
 }

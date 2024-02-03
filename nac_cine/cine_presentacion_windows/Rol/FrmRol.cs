@@ -20,6 +20,7 @@ namespace cine_presentacion_windows.Rol
     {
         private Role rol;
         private RolLogica rolLogica;
+        private int idrolselect = 0;
         public FrmRol()
         {
             InitializeComponent();
@@ -27,12 +28,12 @@ namespace cine_presentacion_windows.Rol
             rolLogica = new RolLogica();
 
 
-
         }
         private void InsertarRol()
         {
+            rol.idUsuario = 2;
             rol.Nombre = txtNombre.Text;
-            rol.Estado = 1;
+            rol.Estado = chkEstado.Checked ? 1 : 0;
             if (rolLogica.InsertarRol(rol))
             {
                 MessageBox.Show("Rol insertado correctamente");
@@ -46,8 +47,13 @@ namespace cine_presentacion_windows.Rol
             
             }
         private void ActualizarRol ()
-        { 
-        if (rolLogica.ActualizarRol(rol))
+        {
+            rol.idUsuario = 2;
+            rol.Nombre = txtNombre.Text;
+            rol.Estado = chkEstado.Checked ? 1 : 0;
+            rol.idRole = idrolselect;
+
+            if (rolLogica.ActualizarRol(rol))
             {
                 MessageBox.Show("Rol editado correctamente");
                  
@@ -65,7 +71,7 @@ namespace cine_presentacion_windows.Rol
             if (rolLogica.EliminarRol(rol))
             {
                 MessageBox.Show("El rol fue eliminado satisfactoriamente");
-
+                Mostrar();
             }
             else
             {
@@ -91,6 +97,16 @@ namespace cine_presentacion_windows.Rol
         private void btnEliminar_Click(object sender, EventArgs e)
         {
            EliminarRol();
+        }
+
+        private void dgvRol_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idrolselect = (int)dgvRol.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void FrmRol_Load(object sender, EventArgs e)
+        {
+            dgvRol.DataSource = rolLogica.Mostrar();
         }
     }
 }

@@ -188,6 +188,7 @@
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.Size = new System.Drawing.Size(656, 116);
             this.dgvProveedor.TabIndex = 11;
+            this.dgvProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellClick);
             // 
             // lblListar
             // 
@@ -209,6 +210,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmProveedor";
             this.Text = "FrmProveedor";
+            this.Load += new System.EventHandler(this.FrmProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

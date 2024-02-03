@@ -53,6 +53,7 @@
             this.dgvpedido.Name = "dgvpedido";
             this.dgvpedido.Size = new System.Drawing.Size(611, 127);
             this.dgvpedido.TabIndex = 0;
+            this.dgvpedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpedido_CellClick);
             // 
             // dtpFechaPedido
             // 
@@ -182,6 +183,7 @@
             this.Controls.Add(this.dgvpedido);
             this.Name = "FrmPedido";
             this.Text = "FrmPedido";
+            this.Load += new System.EventHandler(this.FrmPedido_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpedido)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.grupo.ResumeLayout(false);

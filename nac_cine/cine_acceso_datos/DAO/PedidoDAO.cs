@@ -19,56 +19,81 @@ namespace cine_acceso_datos.DAO
 
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Pedido";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            try
+            {
+                DataTable dataTablepedido = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "select id_pedido, fecha_pedido, estado_Pedido,Pedido_Valor,estado from pedido";
+                leer = comando.ExecuteReader();
+                dataTablepedido.Load(leer);
+                conexion.CerrarConexion();
+                return dataTablepedido;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar el pedido " + ex.Message);
+            }
+
 
         }
         public void InsertarPedido(Pedidos nuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Pedido";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idPedido ", nuevo.idPedido);
-            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idProveedor", nuevo.idProveedor);
-            comando.Parameters.AddWithValue("@fechaPedido", nuevo.fechaPedido);
-            comando.Parameters.AddWithValue("@EstadoPedido", nuevo.EstadoPedido);
-            comando.Parameters.AddWithValue("@PedidoValor", nuevo.PedidoValor);
-            comando.Parameters.AddWithValue("@estado", nuevo.Estado);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "insert into pedido (fecha_pedido, estado_Pedido,Pedido_Valor,estado, id_pelicula)" +
+                                    "Values( '" + nuevo.fechaPedido + "', '" + nuevo.EstadoPedido + "', " + nuevo.PedidoValor + "," + nuevo.Estado + "'," + nuevo.idPelicula + " )";
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede insertar pedido" + ex.Message);
+            }
 
         }
 
         public void EliminarPedido(Pedidos idPedido)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Elimina Pedido";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@idPedido", idPedido));
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "delete from pedido where id_pedido= " + idPedido;
+
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se  eliminar pedido " + ex.Message);
+            }
         }
-        public void ActualizarPedido (Pedidos acnuevo)
+        public void ActualizarPedido(Pedidos acnuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Actualiza Pedido";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idPedido ", acnuevo.idPedido);
-            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor);
-            comando.Parameters.AddWithValue("@fechaPedido", acnuevo.fechaPedido);
-            comando.Parameters.AddWithValue("@EstadoPedido", acnuevo.EstadoPedido);
-            comando.Parameters.AddWithValue("@PedidoValor", acnuevo.PedidoValor);
-            comando.Parameters.AddWithValue("@estado", acnuevo.Estado);
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE pedido set " +
+                      "fecha_pedido='" + acnuevo.fechaPedido + "'," +
+                      "Estado_Pedido='" + acnuevo.EstadoPedido + "'," +
+                      "estado=" + acnuevo.Estado + "," +
+                      "id_pelicula=" + acnuevo.idPelicula +
+                      "where id_pedido=" + acnuevo.idPedido;
+
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+
+
+            }
+
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede actualizar el pedido  " + error.Message);
+
+
+
+            }
 
         }
     }

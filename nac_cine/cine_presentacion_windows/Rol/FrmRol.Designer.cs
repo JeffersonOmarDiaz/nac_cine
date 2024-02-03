@@ -128,6 +128,7 @@
             this.dgvRol.Name = "dgvRol";
             this.dgvRol.Size = new System.Drawing.Size(553, 180);
             this.dgvRol.TabIndex = 4;
+            this.dgvRol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRol_CellClick);
             // 
             // FrmRol
             // 
@@ -139,6 +140,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmRol";
             this.Text = "FrmRol";
+            this.Load += new System.EventHandler(this.FrmRol_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

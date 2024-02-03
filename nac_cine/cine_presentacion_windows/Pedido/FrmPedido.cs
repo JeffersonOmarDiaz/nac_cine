@@ -16,6 +16,7 @@ namespace cine_presentacion_windows.Pedido
     {
         private Pedidos pedido;
         private PedidoLogica pedidoLogica;
+        private int idpedidoselect = 0;
         public FrmPedido()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace cine_presentacion_windows.Pedido
             pedido.fechaPedido = dtpFechaPedido.Value;
             pedido.EstadoPedido = chkEstadoPedido.Checked;
             pedido.PedidoValor = txtPedidoValor.Text;
-            pedido.Estado = 1;
+            pedido.Estado = chkEstado.Checked ? 1 : 0;
 
             if (pedidoLogica.InsertarPedido(pedido))
             {
@@ -42,6 +43,12 @@ namespace cine_presentacion_windows.Pedido
         }
         private void ActualizarPedido()
         {
+            pedido.fechaPedido = dtpFechaPedido.Value;
+            pedido.EstadoPedido = chkEstadoPedido.Checked;
+            pedido.PedidoValor = txtPedidoValor.Text;
+            pedido.Estado = chkEstado.Checked ? 1 : 0;
+            pedido.idPedido = idpedidoselect;
+
             if (pedidoLogica.ActualizarPedido(pedido))
             {
                 MessageBox.Show
@@ -63,7 +70,7 @@ namespace cine_presentacion_windows.Pedido
             {
                 MessageBox.Show
                 ("El Pedido fue eliminado satisfactoriamente");
-
+                Mostrar();
             }
             else
             {
@@ -90,6 +97,16 @@ namespace cine_presentacion_windows.Pedido
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarPedido();   
+        }
+
+        private void dgvpedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idpedidoselect = (int)dgvpedido.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void FrmPedido_Load(object sender, EventArgs e)
+        {
+           dgvpedido.DataSource = pedidoLogica.Mostrar();
         }
     }
 }

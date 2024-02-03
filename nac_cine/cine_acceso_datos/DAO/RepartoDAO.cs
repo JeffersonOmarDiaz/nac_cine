@@ -21,16 +21,16 @@ namespace cine_acceso_datos.DAO
         {
             try
             {
-             DataTable dataTableSala = new DataTable();
+             DataTable dataTablereparto = new DataTable();
                 comando.Connection = conexion.AbrirConexion();
                 comando.CommandText = "select id_reparto, nombre_actor, personaje, id_pelicula,estado from reparto" ;
                 leer = comando.ExecuteReader();
-                dataTableSala.Load(leer);
+                dataTablereparto.Load(leer);
                 conexion.CerrarConexion();
-                return dataTableSala;
+                return dataTablereparto;
             }catch (Exception ex)
             {
-                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+                throw new Exception("Error no se puede listar el reparto " + ex.Message);
             }
 
         }
@@ -48,7 +48,7 @@ namespace cine_acceso_datos.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+                throw new Exception("Error no se puede insertar reparto" + ex.Message);
             }
 
         }
@@ -67,7 +67,7 @@ namespace cine_acceso_datos.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+                throw new Exception("Error no se  eliminar reparto " + ex.Message);
             }
 
 
@@ -95,7 +95,7 @@ namespace cine_acceso_datos.DAO
             catch (Exception error)
             {
 
-                throw new Exception("Error no se puede actualizar la taquilla " + error.Message);
+                throw new Exception("Error no se puede actualizar el reparto " + error.Message);
            
             
             

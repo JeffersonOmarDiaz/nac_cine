@@ -19,59 +19,83 @@ namespace cine_acceso_datos.DAO
 
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Programacion";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-           tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            try
+            {
+                DataTable dataTableprogramacion = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "select id_proveedor, hora_inicio,hora_fin,estreno,estado from programacion";
+                leer = comando.ExecuteReader();
+                dataTableprogramacion.Load(leer);
+                conexion.CerrarConexion();
+                return dataTableprogramacion;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar la programacion " + ex.Message);
+            }
 
         }
         public void InsertarProgramacion(Programaciones nuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Programacion";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProgramacion ", nuevo.idProgramacion);
-            comando.Parameters.AddWithValue("@idSala", nuevo.idSala);
-            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idUsuario", nuevo.idUsuario);
-            comando.Parameters.AddWithValue("@Horainicio", nuevo.HoraInicio);
-            comando.Parameters.AddWithValue("@HoraFin", nuevo.HoraFin);
-            comando.Parameters.AddWithValue("@estreno", nuevo.estreno);
-            comando.Parameters.AddWithValue("@estado", nuevo.estado);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "insert into programacion (Hora_inicio,hora_fin,estreno,estado)" +
+                                    "Values( '" + nuevo.HoraInicio+ "', '" + nuevo.HoraFin + "', '" + nuevo.estreno + "'," + nuevo.estado + ")";
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede insertar programacion" + ex.Message);
+            }
 
         }
         public void EliminarProgramacion(Programaciones idProgramacion)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Elimina Programacion";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@idProgramacion", idProgramacion));
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "delete from programacion where id_proveedor= " + idProgramacion;
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se  eliminar programacion " + ex.Message);
+            }
+
+
         }
         public void ActualizarProgramacion(Programaciones acnuevo)
         {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE programacion set " +
+                      "Hora_inicio='" + acnuevo.HoraInicio + "'," +
+                      "Hora_fin='" + acnuevo.HoraFin + "'," +
+                      "estado=" + acnuevo.estado + "," +
+                      "estreno=" + acnuevo.estreno + "," +
+                      "id_pelicula=" + acnuevo.idPelicula +
+                      "where id_programacion=" + acnuevo.idProgramacion;
 
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Actualiza Programacion";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProgramacion", acnuevo.idProgramacion);
-            comando.Parameters.AddWithValue("@idSala", acnuevo.idSala);
-            comando.Parameters.AddWithValue("@idPelicula", acnuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idUsuario", acnuevo.idUsuario);
-            comando.Parameters.AddWithValue("@Horainicio", acnuevo.HoraInicio);
-            comando.Parameters.AddWithValue("@HoraFin", acnuevo.HoraFin);
-            comando.Parameters.AddWithValue("@estreno", acnuevo.estreno);
-            comando.Parameters.AddWithValue("@estado", acnuevo.estado);      
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+
+
+            }
+
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede actualizar el programacion  " + error.Message);
+
+
+
+            }
 
         }
+    }
     }
 }

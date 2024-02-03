@@ -21,58 +21,85 @@ namespace cine_acceso_datos.DAO
 
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
-            //leer = comando.ExecuteReader();
-            //tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            try
+            {
+                DataTable dataTableproveedor = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "select id_proveedor, nombre,direccion,email,ruc,estado from proveedor";
+                leer = comando.ExecuteReader();
+                dataTableproveedor.Load(leer);
+                conexion.CerrarConexion();
+                return dataTableproveedor;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar el proveedor " + ex.Message);
+            }
 
         }
         public void InsertarProveedor(Proveedores nuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Proveedor";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProveedor ", nuevo.idProveedor);
-            comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
-            comando.Parameters.AddWithValue("@direccion", nuevo.direccion);
-            comando.Parameters.AddWithValue("@email", nuevo.email);
-            comando.Parameters.AddWithValue("@ruc", nuevo.ruc);
-            comando.Parameters.AddWithValue("@estado", nuevo.estado);
-           // comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "insert into proveedor (nombre,direccion,email,ruc,id_proveedor,estado)" +
+                                    "Values( '" + nuevo.Nombre + "', '" + nuevo.direccion + "'´,'" + nuevo.email + "','" + nuevo.ruc + "', " + nuevo.idProveedor + "," + nuevo.estado + ")";
 
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede insertar proveedor" + ex.Message);
+            }
 
         }
 
         public void EliminarProveedor(Proveedores idProveedor)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Elimina Proveedores";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@idProveedor", idProveedor));
-            //comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "delete from proveedor where id_proveedor= " + idProveedor;
+
+
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se  eliminar proveedor " + ex.Message);
+            }
         }
         public void ActualizarProveedor(Proveedores acnuevo)
         {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE Proveedor set " +
+                      "Nombre='" + acnuevo.Nombre + "'," +
+                      "direccion='" + acnuevo.direccion + "'," +
+                      "email='" + acnuevo.email + "'," +
+                      "ruc='" + acnuevo.ruc+ "'," +
+                      "estado=" + acnuevo.estado + "," +
+                      "id_proveedor=" + acnuevo.idProveedor +
+                    
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
 
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Actualiza Proveedores";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idProveedor", acnuevo.idProveedor);
-            comando.Parameters.AddWithValue("@Nombre", acnuevo.Nombre);
-            comando.Parameters.AddWithValue("@direccion", acnuevo.direccion);
-            comando.Parameters.AddWithValue("@email",acnuevo.email);
-            comando.Parameters.AddWithValue("@ruc", acnuevo.ruc);
-            comando.Parameters.AddWithValue("@estado", acnuevo.estado);
-            //comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+
+            }
+
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede actualizar el proveedor " + error.Message);
+
+
+
+            }
+
         }
-
     }
 }
 
