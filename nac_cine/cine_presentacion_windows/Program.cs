@@ -28,7 +28,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTaquilla());
+            Application.Run(new FrmReparto());
 
 
         }

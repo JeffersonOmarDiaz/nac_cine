@@ -50,17 +50,20 @@
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnEditar);
             this.groupBox2.Controls.Add(this.btnGuardar);
-            this.groupBox2.Location = new System.Drawing.Point(439, 37);
+            this.groupBox2.Location = new System.Drawing.Point(585, 46);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(194, 283);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(259, 348);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(55, 197);
+            this.btnEliminar.Location = new System.Drawing.Point(73, 242);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(108, 22);
+            this.btnEliminar.Size = new System.Drawing.Size(144, 27);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(55, 126);
+            this.btnEditar.Location = new System.Drawing.Point(73, 155);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(108, 22);
+            this.btnEditar.Size = new System.Drawing.Size(144, 27);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(55, 59);
+            this.btnGuardar.Location = new System.Drawing.Point(73, 73);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(108, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(144, 27);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -89,10 +94,14 @@
             // dgvReparto
             // 
             this.dgvReparto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReparto.Location = new System.Drawing.Point(24, 347);
+            this.dgvReparto.Location = new System.Drawing.Point(32, 427);
+            this.dgvReparto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvReparto.Name = "dgvReparto";
-            this.dgvReparto.Size = new System.Drawing.Size(621, 92);
+            this.dgvReparto.RowHeadersWidth = 51;
+            this.dgvReparto.Size = new System.Drawing.Size(828, 113);
             this.dgvReparto.TabIndex = 9;
+            this.dgvReparto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReparto_CellClick);
+            this.dgvReparto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReparto_CellContentClick);
             // 
             // groupBox1
             // 
@@ -101,32 +110,37 @@
             this.groupBox1.Controls.Add(this.chkEstado);
             this.groupBox1.Controls.Add(this.lblPersonaje);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Location = new System.Drawing.Point(49, 37);
+            this.groupBox1.Location = new System.Drawing.Point(65, 46);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(335, 282);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(447, 347);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
             // txtPersonaje
             // 
-            this.txtPersonaje.Location = new System.Drawing.Point(28, 141);
+            this.txtPersonaje.Location = new System.Drawing.Point(37, 174);
+            this.txtPersonaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPersonaje.Name = "txtPersonaje";
-            this.txtPersonaje.Size = new System.Drawing.Size(240, 20);
+            this.txtPersonaje.Size = new System.Drawing.Size(319, 22);
             this.txtPersonaje.TabIndex = 4;
             // 
             // txtNombreActor
             // 
-            this.txtNombreActor.Location = new System.Drawing.Point(28, 61);
+            this.txtNombreActor.Location = new System.Drawing.Point(37, 75);
+            this.txtNombreActor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombreActor.Name = "txtNombreActor";
-            this.txtNombreActor.Size = new System.Drawing.Size(240, 20);
+            this.txtNombreActor.Size = new System.Drawing.Size(319, 22);
             this.txtNombreActor.TabIndex = 3;
             // 
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(28, 217);
+            this.chkEstado.Location = new System.Drawing.Point(37, 267);
+            this.chkEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(59, 17);
+            this.chkEstado.Size = new System.Drawing.Size(72, 20);
             this.chkEstado.TabIndex = 2;
             this.chkEstado.Text = "Estado";
             this.chkEstado.UseVisualStyleBackColor = true;
@@ -134,18 +148,20 @@
             // lblPersonaje
             // 
             this.lblPersonaje.AutoSize = true;
-            this.lblPersonaje.Location = new System.Drawing.Point(25, 114);
+            this.lblPersonaje.Location = new System.Drawing.Point(33, 140);
+            this.lblPersonaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPersonaje.Name = "lblPersonaje";
-            this.lblPersonaje.Size = new System.Drawing.Size(54, 13);
+            this.lblPersonaje.Size = new System.Drawing.Size(69, 16);
             this.lblPersonaje.TabIndex = 1;
             this.lblPersonaje.Text = "Personaje";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(25, 33);
+            this.lblNombre.Location = new System.Drawing.Point(33, 41);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -153,23 +169,26 @@
             // lblReparto
             // 
             this.lblReparto.AutoSize = true;
-            this.lblReparto.Location = new System.Drawing.Point(21, 331);
+            this.lblReparto.Location = new System.Drawing.Point(28, 407);
+            this.lblReparto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReparto.Name = "lblReparto";
-            this.lblReparto.Size = new System.Drawing.Size(85, 13);
+            this.lblReparto.Size = new System.Drawing.Size(106, 16);
             this.lblReparto.TabIndex = 11;
             this.lblReparto.Text = "Lista de Reparto";
             // 
             // FrmReparto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblReparto);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvReparto);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReparto";
             this.Text = "FrmReparto";
+            this.Load += new System.EventHandler(this.FrmReparto_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReparto)).EndInit();
             this.groupBox1.ResumeLayout(false);

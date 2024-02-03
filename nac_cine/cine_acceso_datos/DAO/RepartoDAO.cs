@@ -13,60 +13,94 @@ namespace cine_acceso_datos.DAO
     {
 
         private ConexionBD conexion = new ConexionBD();
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
+        //DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
+        SqlDataReader leer;
 
         public DataTable Mostrar()
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Mostrar Reparto";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-            tabla.Load(leer);
-            conexion.CerrarConexion();
-            return tabla;
+            try
+            {
+             DataTable dataTableSala = new DataTable();
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "select id_reparto, nombre_actor, personaje, id_pelicula,estado from reparto" ;
+                leer = comando.ExecuteReader();
+                dataTableSala.Load(leer);
+                conexion.CerrarConexion();
+                return dataTableSala;
+            }catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+            }
 
         }
         public void InsertarReparto(Repartos nuevo)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Insertar Reparto";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idReparto ", nuevo.idReparto);
-            comando.Parameters.AddWithValue("@idPelicula", nuevo.idPelicula);
-            comando.Parameters.AddWithValue("@idNombreActor", nuevo.NombreActor);
-            comando.Parameters.AddWithValue("@Personaje", nuevo.Personaje);
-            comando.Parameters.AddWithValue("@estado", nuevo.Estado);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "insert into reparto (nombre_actor, personaje, id_pelicula,estado)" +
+                                    "Values( '" + nuevo.NombreActor + "', '" + nuevo.Personaje + "', " + nuevo.idPelicula + "," + nuevo.Estado + ")";
+
+
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+            }
 
         }
-        public void EliminarReparto(Repartos idReparto)
+        public void EliminarReparto(int idReparto)
         {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Elimina Reparto";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Add(new SqlParameter("@idReparto", idReparto));
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "delete from Reparto where id_reparto= " + idReparto;
+                //comando.CommandText="UPDATE Reparto set " +
+                //      "estado=" + 0  +
+                //      "where id_reparto=" + idReparto;
+
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error no se puede listar las taquillas " + ex.Message);
+            }
+
+
         }
 
 
         public void ActualizarReparto(Repartos acnuevo)
         {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "UPDATE Reparto set " +
+                      "Nombre_actor='" + acnuevo.NombreActor + "'," +
+                      "personaje='" + acnuevo.Personaje + "'," +
+                      "estado=" + acnuevo.Estado + "," +
+                      "id_pelicula=" + acnuevo.idPelicula +
+                      "where id_reparto=" + acnuevo.idReparto;
+               
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
 
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Actualiza Reparto";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idReparto", acnuevo.idReparto) ;
-            comando.Parameters.AddWithValue("@IdPelicula", acnuevo.idPelicula);
-            comando.Parameters.AddWithValue("@NombreActor", acnuevo.NombreActor);
-            comando.Parameters.AddWithValue("@Personaje",acnuevo.Personaje);        
-            comando.Parameters.AddWithValue("@Estado", acnuevo.Estado);
-            comando.ExecuteNonQuery();
-            conexion.CerrarConexion();
+
+            }
+
+            catch (Exception error)
+            {
+
+                throw new Exception("Error no se puede actualizar la taquilla " + error.Message);
+           
+            
+            
+            }
+           
         }
     }
 }

@@ -11,7 +11,7 @@ namespace cine_acceso_datos
     public class ConexionBD
     {
 
-        private SqlConnection connection = new SqlConnection("Server=odiaz\\SQLEXPRESS;Database=ProyectoExtremCinema04122023;Integrated Security=true;");
+        private SqlConnection connection = new SqlConnection("Server=DESKTOP-FD4T3IV\\SQLEXPRESS01;Database=prueba;Integrated Security=true;");
 
 
         public SqlConnection AbrirConexion()

@@ -17,6 +17,7 @@ namespace cine_presentacion_windows.Reparto
 
         private Repartos reparto;
         private RepartoLogica repartoLogica;
+        private int idrepartoselect = 0;
         public FrmReparto()
         {
             InitializeComponent();
@@ -25,9 +26,10 @@ namespace cine_presentacion_windows.Reparto
         }
         private void InsertarReparto()
         {
+            reparto.idPelicula = 2;
             reparto.NombreActor = txtNombreActor.Text;
             reparto.Personaje = txtPersonaje.Text;
-            reparto.Estado = 1;
+            reparto.Estado = chkEstado.Checked ?1:0;
 
             if (repartoLogica.InsertarReparto(reparto))
             {
@@ -41,12 +43,18 @@ namespace cine_presentacion_windows.Reparto
             }
         }
         private void ActualizarReparto()
+
         {
+            reparto.idPelicula = 2;
+            reparto.NombreActor = txtNombreActor.Text;
+            reparto.Personaje = txtPersonaje.Text;
+            reparto.Estado = chkEstado.Checked ? 1 : 0;
+            reparto.idReparto = idrepartoselect;
             if (repartoLogica.ActualizarReparto(reparto))
             {
                 MessageBox.Show
                 ("Reparto Actualizado correctamente");
-
+                Mostrar();
             }
             else
             {
@@ -59,11 +67,12 @@ namespace cine_presentacion_windows.Reparto
 
         private void EliminarReparto()
         {
-            if (repartoLogica.EliminarReparto(reparto))
+            
+            if (repartoLogica.EliminarReparto(idrepartoselect))
             {
                 MessageBox.Show
                 ("El Reparto fue eliminado satisfactoriamente");
-
+                Mostrar();
             }
             else
             {
@@ -91,6 +100,21 @@ namespace cine_presentacion_windows.Reparto
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EliminarReparto();  
+        }
+
+        private void dgvReparto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvReparto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idrepartoselect = (int)dgvReparto.Rows[e.RowIndex].Cells[0].Value;
+        }
+
+        private void FrmReparto_Load(object sender, EventArgs e)
+        {
+            dgvReparto.DataSource = repartoLogica.Mostrar();
         }
     }
 }

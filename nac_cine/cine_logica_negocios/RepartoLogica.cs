@@ -23,7 +23,7 @@ namespace cine_logica_negocios
         {
             return repartoDao.Mostrar();
         }
-        public Boolean EliminarReparto (Repartos idReparto)
+        public Boolean EliminarReparto (int idReparto)
         {
             repartoDao.EliminarReparto(idReparto);
             return true;
